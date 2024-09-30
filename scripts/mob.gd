@@ -9,8 +9,13 @@ func _ready() -> void:
 	var mob_types = $AnimatedSprite2D.sprite_frames.get_animation_names()
 	$AnimatedSprite2D.play(mob_types[randi() % mob_types.size()])
 	Global.s_game_over.connect(die)
+	Global.s_froze.connect(on_froze_start)
 	pass # Replace with function body.
 
+func on_froze_start():
+	print("check")
+	self.set_axis_velocity(Vector2(0,0))
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
