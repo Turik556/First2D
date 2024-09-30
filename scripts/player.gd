@@ -23,12 +23,6 @@ func _process(delta: float) -> void:
 		velocity.y +=1
 	if Input.is_action_pressed("move_up"):
 		velocity.y -=1
-	
-	#match Input.is_action_pressed(x):
-		#"move_right":
-			#velocity.x +=1
-		#"move_left":
-			#velocity.x -=1
 	if velocity.length()>0:
 		velocity=velocity.normalized()*speed
 		$AnimatedSprite2D.play()
@@ -49,14 +43,16 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	 # Player disappears after being hit.
-
-	hit.emit()
-	# Must be deferred as we can't change physics properties on a physics callback.
-	$CollisionShape2D.set_deferred("disabled", true)
-	$AnimatedSprite2D.visible=false
-	$CPUParticles2D.emitting=true
-	
-	
+	var body_type = body.get_meta("type")
+	if body_type =="Enemy":
+		hit.emit()
+		$CollisionShape2D.set_deferred("disabled", true)
+		$AnimatedSprite2D.visible=false
+		$CPUParticles2D.emitting=true
+	elif body_type == "Item":
+		#some code
+		pass	
+		
 	pass # Replace with function body.
 
 func start(pos):

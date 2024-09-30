@@ -2,6 +2,7 @@ extends RigidBody2D
 
 @export var mob_scene:PackedScene
 signal died(value)
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	
@@ -42,3 +43,6 @@ func _on_cpu_particles_2d_finished() -> void:
 func die():
 	queue_free()
 	pass
+
+func get_type() -> String:
+	return "1"
