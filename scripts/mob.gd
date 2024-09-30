@@ -14,7 +14,7 @@ func _ready() -> void:
 
 func on_froze_start():
 	print("check")
-	self.set_axis_velocity(Vector2(0,0))
+	self.linear_velocity = Vector2(0,0)
 	pass
 
 

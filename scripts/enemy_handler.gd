@@ -6,6 +6,7 @@ signal s_died
 func _ready() -> void:
 	Global.s_start_game.connect(start_game)
 	Global.s_game_over.connect(end_game)
+	Global.s_froze.connect(on_froze_start)
 	
 	pass # Replace with function body.
 
@@ -43,9 +44,11 @@ func on_mob_died(mob):
 
 func start_game():
 	$MobTimer.start()
-	i=0
 	pass
 
 func end_game():
+	$MobTimer.stop()
+	pass
+func on_froze_start():
 	$MobTimer.stop()
 	pass
