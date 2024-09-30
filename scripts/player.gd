@@ -47,7 +47,7 @@ func _on_body_entered(body: Node2D) -> void:
 	if body_type =="Enemy":
 		die();
 	elif body_type == "Item":
-		react_to_item(body)#some code
+		interact_with_item(body)#some code
 		pass	
 		
 	pass # Replace with function body.
@@ -70,6 +70,7 @@ func die():
 	$CPUParticles2D.emitting=true
 	pass	
 		
-func react_to_item(body:RigidBody2D):
+func interact_with_item(body:Item):
 	
+	body.remove()
 	pass
