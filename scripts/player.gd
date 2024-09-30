@@ -45,12 +45,9 @@ func _on_body_entered(body: Node2D) -> void:
 	 # Player disappears after being hit.
 	var body_type = body.get_meta("type")
 	if body_type =="Enemy":
-		hit.emit()
-		$CollisionShape2D.set_deferred("disabled", true)
-		$AnimatedSprite2D.visible=false
-		$CPUParticles2D.emitting=true
+		die();
 	elif body_type == "Item":
-		#some code
+		react_to_item(body)#some code
 		pass	
 		
 	pass # Replace with function body.
@@ -65,3 +62,14 @@ func start(pos):
 func _on_cpu_particles_2d_finished() -> void:
 	$CPUParticles2D.queue_free()
 	pass # Replace with function body.
+
+func die():
+	hit.emit()
+	$CollisionShape2D.set_deferred("disabled", true)
+	$AnimatedSprite2D.visible=false
+	$CPUParticles2D.emitting=true
+	pass	
+		
+func react_to_item(body:RigidBody2D):
+	
+	pass
