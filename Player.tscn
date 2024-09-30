@@ -1,0 +1,65 @@
+[gd_scene load_steps=5 format=3 uid="uid://cajufjns3158d"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_y0ten"]
+[ext_resource type="Texture2D" uid="uid://bynhfobo8vufh" path="res://baloon.png" id="4_y0brg"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_skf7u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_y0brg")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_y0brg")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q7ihs"]
+radius = 35.0
+height = 72.0
+
+[node name="Player" type="Area2D"]
+position = Vector2(231, 459)
+script = ExtResource("1_y0ten")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, 2)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_skf7u")
+animation = &"walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -19)
+shape = SubResource("CapsuleShape2D_q7ihs")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+visible = false
+emitting = false
+amount = 25
+lifetime = 0.5
+one_shot = true
+explosiveness = 0.39
+randomness = 0.23
+emission_shape = 2
+emission_sphere_radius = 0.01
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 250.0
+initial_velocity_max = 250.0
+angle_max = 596.4
+scale_amount_min = 4.0
+scale_amount_max = 4.0
+color = Color(0.952941, 0.933333, 0.854902, 0.933333)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="finished" from="CPUParticles2D" to="." method="_on_cpu_particles_2d_finished"]

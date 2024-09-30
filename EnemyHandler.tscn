@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqi3n4fssgs2l"]
+
+[ext_resource type="Script" path="res://enemy_handler.gd" id="1_3gvam"]
+[ext_resource type="PackedScene" uid="uid://crmgdl0poacw7" path="res://mob.tscn" id="2_lhqpv"]
+
+[sub_resource type="Curve2D" id="Curve2D_mvari"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, -8, 0, 0, 0, 0, 480, 0, 0, 0, 0, 0, 480, 720, 0, 0, 0, 0, 0, 720, 0, 0, 0, 0, 0, -8)
+}
+point_count = 5
+
+[node name="EnemyHandler" type="Node"]
+script = ExtResource("1_3gvam")
+mob_scene = ExtResource("2_lhqpv")
+
+[node name="MobTimer" type="Timer" parent="."]
+
+[node name="MobPath" type="Path2D" parent="."]
+curve = SubResource("Curve2D_mvari")
+
+[node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath"]
+position = Vector2(0, -8)
+rotation = 0.0166651
+
+[connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]

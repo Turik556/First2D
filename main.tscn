@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://cveqi88yfygc1"]
+
+[ext_resource type="PackedScene" uid="uid://cajufjns3158d" path="res://Player.tscn" id="1_pm0dl"]
+[ext_resource type="Script" path="res://main.gd" id="1_y5qig"]
+[ext_resource type="PackedScene" uid="uid://dxl8mpdnhg8dq" path="res://item.tscn" id="3_rwv84"]
+[ext_resource type="PackedScene" uid="uid://bqi3n4fssgs2l" path="res://EnemyHandler.tscn" id="4_ybo78"]
+[ext_resource type="PackedScene" uid="uid://1tee4hpui1pn" path="res://hud.tscn" id="4_yohv7"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_y5qig")
+item_scene = ExtResource("3_rwv84")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.918862, 0.317743, 0.653329, 1)
+
+[node name="Player" parent="." instance=ExtResource("1_pm0dl")]
+
+[node name="EnemyHandler" parent="." instance=ExtResource("4_ybo78")]
+
+[node name="StartTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="StartPosition" type="Marker2D" parent="."]
+position = Vector2(240, 450)
+
+[node name="HUD" parent="." instance=ExtResource("4_yohv7")]
+
+[connection signal="hit" from="Player" to="." method="game_over"]
+[connection signal="s_died" from="EnemyHandler" to="." method="_on_enemy_handler_s_died"]
+[connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]
+[connection signal="start_game" from="HUD" to="." method="new_game"]

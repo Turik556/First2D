@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dxl8mpdnhg8dq"]
+
+[ext_resource type="Texture2D" uid="uid://diicnpb2l7wwh" path="res://art/playerGrey_up1.png" id="1_d8qvb"]
+[ext_resource type="Script" path="res://item.gd" id="1_rj2pc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pqu71"]
+radius = 1.70294e+06
+
+[node name="Item" type="Area2D"]
+collision_mask = 0
+gravity_space_override = 1
+script = ExtResource("1_rj2pc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0, 0.0470588, 0.976471, 1)
+self_modulate = Color(0.0352941, 0.0941176, 0.988235, 1)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_d8qvb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3)
+scale = Vector2(1e-05, 1e-05)
+shape = SubResource("CircleShape2D_pqu71")
