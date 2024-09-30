@@ -51,20 +51,11 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	 # Player disappears after being hit.
-	
-	print(body.get_meta("type"))
-	if body.has_method("get_type"):
-		var type = body.get_type()
-		if type == "Enemy":
-			hit.emit()
+	hit.emit()
 	# Must be deferred as we can't change physics properties on a physics callback.
-			$CollisionShape2D.set_deferred("disabled", true)
-			$AnimatedSprite2D.visible=false
-			$CPUParticles2D.emitting=true
-		elif type == "Item":
-			#
-			pass
-	
+	$CollisionShape2D.set_deferred("disabled", true)
+	$AnimatedSprite2D.visible=false
+	$CPUParticles2D.emitting=true
 	
 	
 	pass # Replace with function body.
@@ -79,12 +70,3 @@ func start(pos):
 func _on_cpu_particles_2d_finished() -> void:
 	$CPUParticles2D.queue_free()
 	pass # Replace with function body.
-
-
-func changeSize(value):
-	if value == "bigger":
-		self.scale = self.scale *2
-	elif value == "smaler":
-		self.scale = self.scale /2
-	pass
-	

@@ -127,7 +127,6 @@ _data = {
 collision_mask = 0
 gravity_scale = 0.0
 script = ExtResource("1_oev2j")
-metadata/type = "Enemy"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 modulate = Color(1, 0.243137, 1, 1)
