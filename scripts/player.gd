@@ -72,5 +72,5 @@ func die():
 	pass	
 		
 func interact_with_item(body:Item):	
-	body.remove()
+	body.function()
 	pass
