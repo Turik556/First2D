@@ -42,6 +42,7 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_body_entered(body: Node2D) -> void:
+	print("body")
 	 # Player disappears after being hit.
 	var body_type = body.get_meta("type")
 	if body_type =="Enemy":
@@ -70,7 +71,6 @@ func die():
 	$CPUParticles2D.emitting=true
 	pass	
 		
-func interact_with_item(body:Item):
-	
+func interact_with_item(body:Item):	
 	body.remove()
 	pass

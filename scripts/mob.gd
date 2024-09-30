@@ -43,6 +43,3 @@ func _on_cpu_particles_2d_finished() -> void:
 func die():
 	queue_free()
 	pass
-
-func get_type() -> String:
-	return "1"

@@ -8,6 +8,7 @@
 
 [node name="Main" type="Node"]
 script = ExtResource("1_y5qig")
+player_scene = ExtResource("3_rwv84")
 item_scene = ExtResource("3_rwv84")
 
 [node name="ColorRect" type="ColorRect" parent="."]
