@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://ck7xvwlf8xbcu"]
+[gd_scene load_steps=4 format=3 uid="uid://ck7xvwlf8xbcu"]
 
 [ext_resource type="PackedScene" uid="uid://dxl8mpdnhg8dq" path="res://Scenes/item.tscn" id="1_jox1x"]
+[ext_resource type="Script" path="res://Scenes/change_S_item.gd" id="2_d8jdg"]
 [ext_resource type="Texture2D" uid="uid://btjfrvoet0vfp" path="res://art/player/playerGrey_walk2.png" id="2_ved3x"]
 
-[node name="Item" instance=ExtResource("1_jox1x")]
+[node name="ChangeSItem" instance=ExtResource("1_jox1x")]
+script = ExtResource("2_d8jdg")
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_ved3x")
