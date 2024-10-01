@@ -46,6 +46,7 @@ func _on_body_entered(body: Node2D) -> void:
 		if body_type =="Enemy":
 			die();
 		elif body_type == "Item":
+			$ItemQueue.add_to_interact_queue(body)
 			interact_with_item(body)#some code
 	pass	
 

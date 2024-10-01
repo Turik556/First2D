@@ -35,8 +35,7 @@ func spawn_item(mob_location):
 	var item_location = mob_location
 	item.position = item_location
 	add_child(item)
-	pass
-	
+	pass	
 func update_score(value):
 	score+=1
 	$HUD.update_score(score)
@@ -44,8 +43,6 @@ func update_score(value):
 func _on_start_timer_timeout() -> void:
 	Global.s_start_game.emit
 	pass # Replace with function body.
-
-
 func _on_enemy_handler_s_died(mob) -> void:
 	update_score(1)
 	spawn_item(mob.position)
