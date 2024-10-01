@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cajufjns3158d"]
+[gd_scene load_steps=6 format=3 uid="uid://cajufjns3158d"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_y0ten"]
+[ext_resource type="PackedScene" uid="uid://cnq5205a782qa" path="res://Scenes/item_queue.tscn" id="3_m8pip"]
 [ext_resource type="Texture2D" uid="uid://bynhfobo8vufh" path="res://art/player/baloon.png" id="4_y0brg"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_skf7u"]
@@ -60,6 +61,8 @@ angle_max = 596.4
 scale_amount_min = 4.0
 scale_amount_max = 4.0
 color = Color(0.952941, 0.933333, 0.854902, 0.933333)
+
+[node name="ItemQueue" parent="." instance=ExtResource("3_m8pip")]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="finished" from="CPUParticles2D" to="." method="_on_cpu_particles_2d_finished"]

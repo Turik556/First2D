@@ -11,7 +11,6 @@ func _ready() -> void:
 	#hide()
 	pass # Replace with function body.
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	var velocity=Vector2.ZERO
@@ -42,23 +41,19 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_body_entered(body: Node2D) -> void:
-	print("body")
-	 # Player disappears after being hit.
-	var body_type = body.get_meta("type")
-	if body_type =="Enemy":
-		die();
-	elif body_type == "Item":
-		interact_with_item(body)#some code
-		pass	
-		
-	pass # Replace with function body.
+	if body.has_meta("type"):
+		var body_type = body.get_meta("type")
+		if body_type =="Enemy":
+			die();
+		elif body_type == "Item":
+			interact_with_item(body)#some code
+	pass	
 
 func start(pos):
 	position = pos
 	show()
 	$CollisionShape2D.disabled = false
 	$AnimatedSprite2D.show()
-
 
 func _on_cpu_particles_2d_finished() -> void:
 	$CPUParticles2D.queue_free()

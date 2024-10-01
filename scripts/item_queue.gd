@@ -11,6 +11,7 @@ func _process(delta: float) -> void:
 	pass
 func on_froze_start():
 	$Timer.start(froze_time) 
+	
 	pass
 
 
