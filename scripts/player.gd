@@ -66,6 +66,7 @@ func interact_with_item(body:Item):
 	if body.item_name == null:
 		return
 	elif body.item_name == "ChangeSize":
+		$ItemQueue/ChangeSizeTimer.start()
 		change_size("smaller")
 		pass	
 	$ItemQueue.add_to_interact_queue(body)
