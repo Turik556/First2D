@@ -68,5 +68,6 @@ func die():
 	pass	
 		
 func interact_with_item(body:Item):	
+	$ItemQueue.add_to_interact_queue(body)
 	body.function()
 	pass
