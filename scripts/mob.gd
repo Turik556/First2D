@@ -2,6 +2,7 @@ extends RigidBody2D
 
 @export var mob_scene:PackedScene
 signal died(value)
+var velocity
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -9,14 +10,18 @@ func _ready() -> void:
 	var mob_types = $AnimatedSprite2D.sprite_frames.get_animation_names()
 	$AnimatedSprite2D.play(mob_types[randi() % mob_types.size()])
 	Global.s_game_over.connect(die)
-	Global.s_froze.connect(on_froze_start)
+	Global.s_froze_start.connect(on_froze_start)
+	Global.s_froze_ends.connect(on_froze_ends)
 	pass # Replace with function body.
 
 func on_froze_start():
 	print("check")
+	velocity = self.linear_velocity
 	self.linear_velocity = Vector2(0,0)
 	pass
-
+func on_froze_ends():
+	self.linear_velocity = velocity
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
