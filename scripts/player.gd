@@ -66,16 +66,16 @@ func interact_with_item(body:Item):
 	if body.item_name == null:
 		return
 	elif body.item_name == "ChangeSize":
-		change_size("small")
+		change_size("smaller")
 		pass	
 	$ItemQueue.add_to_interact_queue(body)
 	body.function()
 	pass
 
 func change_size(value:String):
-	var scale = self.transform.get_scale()
+	var _scale = self.transform.get_scale()
 	if value ==  "smaller":
-		self.transform.scaled(scale*0.5)
+		scale =_scale*0.5
 	if value ==  "bigger":
-		self.transform.scaled(scale*2)
+		scale =_scale*2
 	pass

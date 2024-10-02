@@ -28,5 +28,5 @@ func remove():
 	queue_free()
 	pass
 func function():
-	Global.froze.emit()
+	
 	pass
