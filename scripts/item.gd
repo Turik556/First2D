@@ -2,7 +2,7 @@ extends RigidBody2D
 
 class_name Item
 var item_sprite:Sprite2D
-var item_name:String
+@export var item_name:String
 var gravity:float = 0.5
 
 # Called when the node enters the scene tree for the first time.

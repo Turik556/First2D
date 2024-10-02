@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cmla5ifurvf0q"]
 
 [ext_resource type="PackedScene" uid="uid://dxl8mpdnhg8dq" path="res://Scenes/item.tscn" id="1_71i8t"]
-[ext_resource type="Script" path="res://Scenes/change_size_item.gd" id="2_yiydg"]
+[ext_resource type="Script" path="res://scripts/change_size_item.gd" id="2_yiydg"]
 
 [node name="ChangeSizeItem" instance=ExtResource("1_71i8t")]
 script = ExtResource("2_yiydg")

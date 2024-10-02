@@ -6,7 +6,7 @@ var screen_size # Size of the game window.
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
+	change_size("initial")
 	screen_size = get_viewport_rect().size
 	pass # Replace with function body.
 
@@ -65,10 +65,12 @@ func die():
 func interact_with_item(body:Item):	
 	if body.item_name == null:
 		return
-	elif body.item_name == "ChangeSize":
+	elif body.item_name == "smaller":
 		$ItemQueue/ChangeSizeTimer.start()
 		change_size("smaller")
-		pass	
+	elif body.item_name == "bigger":
+		$ItemQueue/ChangeSizeTimer.start()
+		change_size("bigger")
 	$ItemQueue.add_to_interact_queue(body)
 	body.function()
 	pass
@@ -79,4 +81,6 @@ func change_size(value:String):
 		scale =_scale*0.5
 	if value ==  "bigger":
 		scale =_scale*2
+	if value == "initial":
+		scale =Vector2(1,1)	
 	pass

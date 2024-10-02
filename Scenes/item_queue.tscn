@@ -9,6 +9,7 @@ script = ExtResource("1_t7lrf")
 one_shot = true
 
 [node name="ChangeSizeTimer" type="Timer" parent="."]
+wait_time = 2.0
 one_shot = true
 
 [connection signal="timeout" from="FrozeTimer" to="." method="_on_timer_timeout"]

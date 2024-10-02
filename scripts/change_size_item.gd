@@ -3,7 +3,7 @@ class_name changeSizeItem extends Item
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	item_name = "ChangeSize"
+	item_name = "smaller"
 	initialize()
 	pass # Replace with function body.
 

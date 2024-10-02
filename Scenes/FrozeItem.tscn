@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://ck7xvwlf8xbcu"]
 
 [ext_resource type="PackedScene" uid="uid://dxl8mpdnhg8dq" path="res://Scenes/item.tscn" id="1_jox1x"]
-[ext_resource type="Script" path="res://Scenes/froze_item.gd" id="2_d8jdg"]
+[ext_resource type="Script" path="res://scripts/froze_item.gd" id="2_d8jdg"]
 [ext_resource type="Texture2D" uid="uid://btjfrvoet0vfp" path="res://art/player/playerGrey_walk2.png" id="2_ved3x"]
 
 [node name="FrozeItem" instance=ExtResource("1_jox1x")]

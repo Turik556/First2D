@@ -29,7 +29,6 @@ func new_game():
 	Global.s_start_game.emit()
 	pass
 
-
 func spawn_item(mob_location):
 	var item = item_scene.instantiate()
 	var item_location = mob_location
