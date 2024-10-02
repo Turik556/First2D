@@ -9,6 +9,7 @@ func _ready() -> void:
 	Global.s_froze_start.connect(on_froze_start)
 	Global.s_froze_ends.connect(on_froze_ends)
 	
+	
 	pass # Replace with function body.
 
 

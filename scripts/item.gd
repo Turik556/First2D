@@ -17,16 +17,15 @@ func initialize():
 func _process(delta: float) -> void:
 	pass
 func on_froze_start():
-	gravity = self.gravity_scale
+	gravity = gravity_scale
 	self.gravity_scale = 0
 	pass
 func on_froze_ends():
-	self.gravity_scale = 0.5
-	self.gravity_scale = gravity
+	gravity_scale = 0.5
+	gravity_scale = gravity
 	pass
 func remove():
 	queue_free()
 	pass
 func function():
-	
 	pass

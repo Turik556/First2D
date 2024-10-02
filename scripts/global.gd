@@ -6,3 +6,5 @@ signal s_item_work_start
 signal s_item_work_ends
 signal s_froze_start
 signal s_froze_ends
+signal s_speed_up
+signal s_speed_up_ends

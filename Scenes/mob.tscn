@@ -127,6 +127,7 @@ _data = {
 collision_mask = 0
 gravity_scale = 0.0
 script = ExtResource("1_oev2j")
+velocity = Vector2(200, 0)
 metadata/type = "Enemy"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
