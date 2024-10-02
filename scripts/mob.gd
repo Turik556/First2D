@@ -24,7 +24,7 @@ func on_speed_up_start():
 	linear_velocity *=acceleration
 	pass
 func on_item_effect_ends():
-	linear_velocity = velocity
+	linear_velocity = velocity.rotated(direction)
 	pass
 func _process(delta: float) -> void:
 	pass
