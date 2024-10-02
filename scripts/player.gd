@@ -8,7 +8,6 @@ var screen_size # Size of the game window.
 func _ready() -> void:
 	
 	screen_size = get_viewport_rect().size
-	#hide()
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -33,11 +32,7 @@ func _process(delta: float) -> void:
 	if velocity.x != 0:
 		$AnimatedSprite2D.animation = "walk"
 		$AnimatedSprite2D.flip_v = false
-	# See the note below about the following boolean assignment.
 		$AnimatedSprite2D.flip_h = velocity.x < 0
-	#elif velocity.y != 0:
-		#$AnimatedSprite2D.animation = "up"
-		#$AnimatedSprite2D.flip_v = velocity.y > 0
 	pass
 
 func _on_body_entered(body: Node2D) -> void:
@@ -68,6 +63,19 @@ func die():
 	pass	
 		
 func interact_with_item(body:Item):	
+	if body.item_name == null:
+		return
+	elif body.item_name == "ChangeSize":
+		change_size("small")
+		pass	
 	$ItemQueue.add_to_interact_queue(body)
 	body.function()
+	pass
+
+func change_size(value:String):
+	var scale = self.transform.get_scale()
+	if value ==  "smaller":
+		self.transform.scaled(scale*0.5)
+	if value ==  "bigger":
+		self.transform.scaled(scale*2)
 	pass
