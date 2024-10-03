@@ -1,87 +1,10 @@
-[gd_scene load_steps=24 format=3 uid="uid://crmgdl0poacw7"]
+[gd_scene load_steps=8 format=3 uid="uid://crmgdl0poacw7"]
 
 [ext_resource type="Script" path="res://scripts/mob.gd" id="1_oev2j"]
-[ext_resource type="Texture2D" uid="uid://8xs5cui2aar0" path="res://art/saw_128/saw_128_0.png" id="2_8imux"]
-[ext_resource type="Texture2D" uid="uid://bkfa45067jh6g" path="res://art/saw_128/saw_128_1.png" id="3_8wjfm"]
-[ext_resource type="Texture2D" uid="uid://y8twnushh4vx" path="res://art/saw_128/saw_128_2.png" id="4_cx1tl"]
-[ext_resource type="Texture2D" uid="uid://bo65bmuk3igff" path="res://art/saw_128/saw_128_3.png" id="5_ri6vv"]
-[ext_resource type="Texture2D" uid="uid://w0avvftihbu7" path="res://art/saw_128/saw_128_4.png" id="6_oeffj"]
-[ext_resource type="Texture2D" uid="uid://b6tj05jo21nh3" path="res://art/saw_128/saw_128_5.png" id="7_hhtq2"]
-[ext_resource type="Texture2D" uid="uid://c8ss3edn2x7tq" path="res://art/saw_128/saw_128_6.png" id="8_octed"]
-[ext_resource type="Texture2D" uid="uid://cvono8v4i65al" path="res://art/saw_128/saw_128_7.png" id="9_a6ptj"]
 [ext_resource type="Texture2D" uid="uid://c0nbuq6rjuljq" path="res://art/saw_64/saw_64_0.png" id="10_0xb77"]
-[ext_resource type="Texture2D" uid="uid://bcby247py1gho" path="res://art/saw_64/saw_64_1.png" id="11_eusp1"]
-[ext_resource type="Texture2D" uid="uid://dcvjul5od8obj" path="res://art/saw_64/saw_64_2.png" id="12_72xsp"]
-[ext_resource type="Texture2D" uid="uid://d32qm1yk27a0x" path="res://art/saw_64/saw_64_3.png" id="13_4rytu"]
-[ext_resource type="Texture2D" uid="uid://dc87kjj8dcujp" path="res://art/saw_64/saw_64_4.png" id="14_ehs6q"]
-[ext_resource type="Texture2D" uid="uid://ca0e37vf43c6c" path="res://art/saw_64/saw_64_5.png" id="15_ufqdk"]
-[ext_resource type="Texture2D" uid="uid://bgfqvasrjw48d" path="res://art/saw_64/saw_64_6.png" id="16_gy83g"]
-[ext_resource type="Texture2D" uid="uid://cgo1cuigs7seh" path="res://art/saw_64/saw_64_7.png" id="17_urxvi"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_tjb5q"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_8imux")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_8wjfm")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_cx1tl")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_ri6vv")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_oeffj")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_hhtq2")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_octed")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_a6ptj")
-}],
-"loop": true,
-"name": &"saw_128",
-"speed": 15.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("10_0xb77")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_eusp1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_72xsp")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_4rytu")
-}, {
-"duration": 1.0,
-"texture": ExtResource("14_ehs6q")
-}, {
-"duration": 1.0,
-"texture": ExtResource("15_ufqdk")
-}, {
-"duration": 1.0,
-"texture": ExtResource("16_gy83g")
-}, {
-"duration": 1.0,
-"texture": ExtResource("17_urxvi")
-}],
-"loop": true,
-"name": &"saw_64",
-"speed": 5.0
-}]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fxrbm"]
-radius = 60.0
-height = 126.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_nb80f"]
+radius = 32.0156
 
 [sub_resource type="Gradient" id="Gradient_82fmg"]
 offsets = PackedFloat32Array(0.08, 0.626667)
@@ -129,21 +52,16 @@ gravity_scale = 0.0
 script = ExtResource("1_oev2j")
 metadata/type = "Enemy"
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-modulate = Color(1, 0.243137, 1, 1)
-self_modulate = Color(1, 1, 0.247059, 1)
-position = Vector2(2.27374e-13, 0)
-scale = Vector2(0.75, 0.75)
-sprite_frames = SubResource("SpriteFrames_tjb5q")
-animation = &"saw_128"
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("10_0xb77")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
-shape = SubResource("CapsuleShape2D_fxrbm")
+shape = SubResource("CircleShape2D_nb80f")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
-position = Vector2(-3.8147e-06, -0.499999)
-scale = Vector2(4.9, 3.65)
+position = Vector2(0, 0.5)
+scale = Vector2(3.2, 3.25)
 
 [node name="Button" type="Button" parent="."]
 offset_left = -65.0
@@ -155,6 +73,7 @@ shortcut_feedback = false
 flat = true
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+visible = false
 position = Vector2(0, 12)
 emitting = false
 amount = 25
@@ -170,10 +89,6 @@ scale_amount_min = 5.0
 scale_amount_max = 15.0
 color = Color(1, 0.168627, 0.14902, 1)
 color_initial_ramp = SubResource("Gradient_82fmg")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
-texture = ExtResource("2_8imux")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("")

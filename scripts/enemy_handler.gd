@@ -21,12 +21,7 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_mob_timer_timeout() -> void:
-	var mob = mob_scene.instantiate()
-	var mob_spawn_location = $MobPath/MobSpawnLocation
-	mob_spawn_location.progress_ratio =randf()
-	add_child(mob)
-	mob.died.connect(on_mob_died)
-	
+	spawn_enemy()
 	pass
 
 func on_mob_died(mob):
@@ -48,3 +43,12 @@ func on_froze_ends():
 func get_spawn_location():
 	var location = $MobPath/MobSpawnLocation
 	return location
+
+func spawn_enemy():
+	var mob = mob_scene.instantiate()
+	var mob_spawn_location = $MobPath/MobSpawnLocation
+	mob_spawn_location.progress_ratio =randf()
+	
+	add_child(mob)
+	mob.died.connect(on_mob_died)
+	pass
