@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://8xs5cui2aar0" path="res://art/saw_128/saw_128_0.png" id="2_dj78n"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_s7ypm"]
-radius = 61.2046
+radius = 62.0
 
 [node name="Saw_128" instance=ExtResource("1_n7qun")]
 
@@ -15,5 +15,5 @@ texture = ExtResource("2_dj78n")
 shape = SubResource("CircleShape2D_s7ypm")
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="3"]
-position = Vector2(0.280623, -0.201536)
-scale = Vector2(6.37095, 6.21049)
+position = Vector2(-0.140309, 0.359695)
+scale = Vector2(6.32886, 6.26662)

@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://4i2iyednab76"]
+
+[ext_resource type="PackedScene" uid="uid://crmgdl0poacw7" path="res://Scenes/Enemys/mob.tscn" id="1_dcy0h"]
+[ext_resource type="Texture2D" uid="uid://bmaj80ildopqr" path="res://art/suriken/shuriken_64.png" id="2_2o5j4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jyk0r"]
+radius = 34.1321
+
+[node name="Mob" instance=ExtResource("1_dcy0h")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_2o5j4")
+
+[node name="CollisionShape2D" parent="." index="2"]
+shape = SubResource("CircleShape2D_jyk0r")
+
+[node name="Button" parent="." index="4"]
+offset_left = -32.0
+offset_top = -33.0
+offset_right = 33.0
+offset_bottom = 33.0
