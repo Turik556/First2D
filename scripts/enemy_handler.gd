@@ -1,5 +1,6 @@
 extends Node
 class_name EnemyHandler
+var enemys = []
 @export var mob_scene: PackedScene
 @onready var mob_spawn_location = $MobPath/MobSpawnLocation
 var i=0

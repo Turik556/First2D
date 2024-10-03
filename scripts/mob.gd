@@ -28,6 +28,7 @@ func on_item_effect_ends():
 	linear_velocity = velocity.rotated(direction)
 	pass
 func _process(delta: float) -> void:
+	
 	pass
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
@@ -38,7 +39,6 @@ func _on_button_pressed() -> void:
 	
 	$CPUParticles2D.emitting=true
 	died.emit(self)
-	$AnimatedSprite2D.hide()
 	$CollisionShape2D.set_deferred("disabled",true) 
 	
 	$Button.hide()
@@ -54,8 +54,7 @@ func die():
 	pass
 
 func initialize():
-	var mob_types = $AnimatedSprite2D.sprite_frames.get_animation_names()
-	$AnimatedSprite2D.play(mob_types[randi() % mob_types.size()])
+	
 	Global.s_game_over.connect(die)
 	Global.s_froze_start.connect(on_froze_start)
 	Global.s_froze_ends.connect(on_item_effect_ends)

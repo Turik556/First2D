@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8fo4f7bqh0e3"]
+
+[ext_resource type="PackedScene" uid="uid://crmgdl0poacw7" path="res://Scenes/Enemys/mob.tscn" id="1_n7qun"]
+[ext_resource type="Texture2D" uid="uid://8xs5cui2aar0" path="res://art/saw_128/saw_128_0.png" id="2_dj78n"]
+
+[node name="Saw_128" instance=ExtResource("1_n7qun")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_dj78n")
+
+[node name="VisibleOnScreenNotifier2D" parent="." index="3"]
+position = Vector2(0.280623, -0.201536)
+scale = Vector2(6.37095, 6.21049)
