@@ -41,7 +41,7 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nb80f"]
-radius = 32.0156
+radius = 32.2025
 
 [sub_resource type="Gradient" id="Gradient_82fmg"]
 offsets = PackedFloat32Array(0.08, 0.626667)
@@ -62,6 +62,7 @@ callback_mode_process = 0
 libraries = {
 "": SubResource("AnimationLibrary_507ck")
 }
+autoplay = "rotation"
 playback_auto_capture = false
 speed_scale = 2.0
 
