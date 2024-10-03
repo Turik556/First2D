@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bqi3n4fssgs2l"]
+[gd_scene load_steps=6 format=3 uid="uid://bqi3n4fssgs2l"]
 
 [ext_resource type="Script" path="res://scripts/enemy_handler.gd" id="1_3gvam"]
+[ext_resource type="PackedScene" uid="uid://dn3uhqj24rcyi" path="res://Scenes/Enemys/saw_64.tscn" id="2_40yrd"]
 [ext_resource type="PackedScene" uid="uid://4i2iyednab76" path="res://Scenes/Enemys/shuriken.tscn" id="2_ylr5j"]
+[ext_resource type="PackedScene" uid="uid://b8fo4f7bqh0e3" path="res://Scenes/Enemys/saw_128.tscn" id="3_mea1j"]
 
 [sub_resource type="Curve2D" id="Curve2D_mvari"]
 _data = {
@@ -11,6 +13,7 @@ point_count = 5
 
 [node name="EnemyHandler" type="Node"]
 script = ExtResource("1_3gvam")
+Enemys = [ExtResource("2_40yrd"), ExtResource("3_mea1j"), ExtResource("2_ylr5j")]
 mob_scene = ExtResource("2_ylr5j")
 
 [node name="MobTimer" type="Timer" parent="."]

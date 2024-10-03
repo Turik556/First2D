@@ -28,7 +28,6 @@ func on_item_effect_ends():
 	linear_velocity = velocity.rotated(direction)
 	pass
 func _process(delta: float) -> void:
-	
 	pass
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
@@ -40,9 +39,8 @@ func _on_button_pressed() -> void:
 	$CPUParticles2D.emitting=true
 	died.emit(self)
 	$CollisionShape2D.set_deferred("disabled",true) 
-	
 	$Button.hide()
-	
+	$Sprite2D.hide()
 	pass # Replace with function body.
 
 func _on_cpu_particles_2d_finished() -> void:
