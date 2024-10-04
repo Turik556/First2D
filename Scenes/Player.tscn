@@ -30,6 +30,7 @@ height = 72.0
 
 [node name="Player" type="Area2D"]
 position = Vector2(231, 459)
+collision_mask = 2
 script = ExtResource("1_y0ten")
 metadata/_edit_group_ = true
 
@@ -66,6 +67,7 @@ color = Color(0.952941, 0.933333, 0.854902, 0.933333)
 
 [node name="Shield" parent="." instance=ExtResource("4_gn1bt")]
 show_behind_parent = true
+position = Vector2(2, -17)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="finished" from="CPUParticles2D" to="." method="_on_cpu_particles_2d_finished"]

@@ -1,6 +1,5 @@
 extends Area2D
-
-
+var is_able:bool = true
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -10,9 +9,23 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-
 func _on_body_entered(body: Node) -> void:
-	print(body.name)
-	queue_free()
-	
+	if body.get_meta("type") == "enemy":
+		body.die()
+		queue_free()
 	pass # Replace with function body.
+ 
+func disable():
+	if is_able == true:
+		monitoring = false
+		visible = false		
+		is_able = false 
+	pass
+func enable():
+	if is_able == true:
+		pass
+	else:
+		monitoring = true
+		visible = true
+		is_able = true 
+	pass	

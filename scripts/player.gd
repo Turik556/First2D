@@ -8,6 +8,7 @@ var screen_size # Size of the game window.
 func _ready() -> void:
 	change_size("initial")
 	screen_size = get_viewport_rect().size
+	$Shield.disable()
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -38,7 +39,7 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body.has_meta("type"):
 		var body_type = body.get_meta("type")
-		if body_type =="Enemy":
+		if body_type =="enemy":
 			die();
 		elif body_type == "Item":
 			$ItemQueue.add_to_interact_queue(body)
@@ -52,7 +53,6 @@ func start(pos):
 	$AnimatedSprite2D.show()
 
 func _on_cpu_particles_2d_finished() -> void:
-	$CPUParticles2D.queue_free()
 	pass # Replace with function body.
 
 func die():
@@ -72,10 +72,11 @@ func interact_with_item(body:Item):
 		$ItemQueue/ChangeSizeTimer.start()
 		change_size("bigger")
 	elif body.item_name == "shield":
-		$Shield.visible = true
-		body.function()
+		$Shield.enable()
+		
 		
 	$ItemQueue.add_to_interact_queue(body)
+	body.function()
 	pass
 
 func change_size(value:String):
