@@ -1,11 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://b2thwqcug124p"]
+[gd_scene load_steps=3 format=3 uid="uid://b2thwqcug124p"]
 
 [ext_resource type="Script" path="res://scripts/item_spawner.gd" id="1_atpjg"]
-[ext_resource type="PackedScene" uid="uid://ck7xvwlf8xbcu" path="res://Scenes/FrozeItem.tscn" id="2_m14sg"]
-[ext_resource type="PackedScene" uid="uid://byscbhf26pakv" path="res://Scenes/Change_size_b_item.tscn" id="3_rgm14"]
-[ext_resource type="PackedScene" uid="uid://cmla5ifurvf0q" path="res://Scenes/change_size_s_item.tscn" id="4_se258"]
-[ext_resource type="PackedScene" uid="uid://pvr776ugj5v" path="res://Scenes/enemy_speed_up_item.tscn" id="5_xngo2"]
+[ext_resource type="PackedScene" uid="uid://b3ai7txi7xq3n" path="res://Scenes/shield_item.tscn" id="6_6rmqn"]
 
 [node name="Item_spawner" type="Node"]
 script = ExtResource("1_atpjg")
-Items = Array[PackedScene]([ExtResource("2_m14sg"), ExtResource("3_rgm14"), ExtResource("4_se258"), ExtResource("5_xngo2")])
+Items = Array[PackedScene]([ExtResource("6_6rmqn")])

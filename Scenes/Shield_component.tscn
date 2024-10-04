@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://drpyjqxlti35j"]
+[gd_scene load_steps=3 format=3 uid="uid://drpyjqxlti35j"]
+
+[ext_resource type="Texture2D" uid="uid://q4xu3ehw3ldi" path="res://art/2636235.png" id="1_vetir"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3nx4x"]
 radius = 64.0
@@ -6,6 +8,8 @@ radius = 64.0
 [node name="Shield" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_vetir")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_3nx4x")

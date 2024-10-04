@@ -71,8 +71,11 @@ func interact_with_item(body:Item):
 	elif body.item_name == "bigger":
 		$ItemQueue/ChangeSizeTimer.start()
 		change_size("bigger")
+	elif body.item_name == "shield":
+		$Shield.visible = true
+		body.function()
+		
 	$ItemQueue.add_to_interact_queue(body)
-	body.function()
 	pass
 
 func change_size(value:String):
