@@ -1,8 +1,8 @@
 [gd_scene load_steps=3 format=3 uid="uid://b2thwqcug124p"]
 
 [ext_resource type="Script" path="res://scripts/item_spawner.gd" id="1_atpjg"]
-[ext_resource type="PackedScene" uid="uid://b3ai7txi7xq3n" path="res://Scenes/shield_item.tscn" id="6_6rmqn"]
+[ext_resource type="PackedScene" uid="uid://ck7xvwlf8xbcu" path="res://Scenes/FrozeItem.tscn" id="2_m14sg"]
 
 [node name="Item_spawner" type="Node"]
 script = ExtResource("1_atpjg")
-Items = Array[PackedScene]([ExtResource("6_6rmqn")])
+Items = Array[PackedScene]([ExtResource("2_m14sg")])

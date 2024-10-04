@@ -13,7 +13,7 @@ point_count = 5
 
 [node name="EnemyHandler" type="Node"]
 script = ExtResource("1_3gvam")
-Enemys = [ExtResource("2_40yrd"), ExtResource("3_mea1j"), ExtResource("2_ylr5j")]
+Enemys = Array[PackedScene]([ExtResource("2_40yrd"), ExtResource("3_mea1j"), ExtResource("2_ylr5j")])
 mob_scene = ExtResource("2_ylr5j")
 
 [node name="MobTimer" type="Timer" parent="."]
