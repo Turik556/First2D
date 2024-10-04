@@ -19,12 +19,17 @@ func on_froze_start():
 	print("check")
 	velocity = self.linear_velocity
 	linear_velocity = Vector2(0,0)
+	$AnimationPlayer.stop()
 	pass
 func on_speed_up_start():
 	velocity = linear_velocity
 	linear_velocity *=acceleration
 	pass
 func on_item_effect_ends():
+	if $AnimationPlayer.is_playing():
+		pass
+	else:
+		$AnimationPlayer.play()	
 	linear_velocity = velocity.rotated(direction)
 	pass
 func _process(delta: float) -> void:
