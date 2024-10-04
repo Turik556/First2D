@@ -65,8 +65,7 @@ color = Color(0.952941, 0.933333, 0.854902, 0.933333)
 [node name="ItemQueue" parent="." instance=ExtResource("3_m8pip")]
 
 [node name="Shield" parent="." instance=ExtResource("4_gn1bt")]
-z_index = -1
-position = Vector2(3, -18)
+show_behind_parent = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="finished" from="CPUParticles2D" to="." method="_on_cpu_particles_2d_finished"]
