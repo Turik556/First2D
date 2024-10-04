@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b3ai7txi7xq3n"]
+
+[ext_resource type="PackedScene" uid="uid://dxl8mpdnhg8dq" path="res://Scenes/item.tscn" id="1_ogccj"]
+
+[node name="ShieldItem" instance=ExtResource("1_ogccj")]
+item_name = "Shield"
