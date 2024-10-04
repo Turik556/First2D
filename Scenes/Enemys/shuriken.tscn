@@ -15,7 +15,7 @@ texture = ExtResource("2_2o5j4")
 shape = SubResource("CircleShape2D_jyk0r")
 
 [node name="Button" parent="." index="4"]
-offset_left = -32.0
-offset_top = -33.0
-offset_right = 33.0
-offset_bottom = 33.0
+offset_left = -36.0
+offset_top = -35.0
+offset_right = 35.0
+offset_bottom = 35.0
