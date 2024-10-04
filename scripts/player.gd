@@ -73,8 +73,7 @@ func interact_with_item(body:Item):
 		change_size("bigger")
 	elif body.item_name == "shield":
 		$Shield.enable()
-		
-		
+	
 	$ItemQueue.add_to_interact_queue(body)
 	body.function()
 	pass
