@@ -20,6 +20,7 @@ func on_froze_start():
 	velocity = self.linear_velocity
 	linear_velocity = Vector2(0,0)
 	$AnimationPlayer.stop()
+	modulate = Color("#0005ff")
 	pass
 func on_speed_up_start():
 	velocity = linear_velocity
@@ -31,7 +32,9 @@ func on_item_effect_ends():
 	else:
 		$AnimationPlayer.play()	
 	linear_velocity = velocity.rotated(direction)
+	modulate = Color("#ffffff")
 	pass
+	
 func _process(delta: float) -> void:
 	pass
 
