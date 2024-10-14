@@ -18,6 +18,7 @@ mob_scene = ExtResource("2_ylr5j")
 
 [node name="MobTimer" type="Timer" parent="."]
 process_mode = 1
+wait_time = 1.5
 
 [node name="MobPath" type="Path2D" parent="."]
 curve = SubResource("Curve2D_mvari")

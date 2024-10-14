@@ -1,5 +1,5 @@
 extends Node
-
+signal s_score_is
 signal s_start_game
 signal s_game_over
 signal s_item_work_start

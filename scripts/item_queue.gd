@@ -8,11 +8,11 @@ func _ready() -> void:
 	Global.s_froze_start.connect(on_froze_start)
 	Global.s_speed_up.connect(on_speed_up_start)
 	
-	pass # Replace with function body.
+	pass # Replace with function body.a
 
 # Called every frame. 'delta' is the eladpsed time since the previous frame.
 func _process(delta: float) -> void:
-	print($FrozeTimer.time_left)
+	
 	pass
 func on_froze_start():
 	$FrozeTimer.start() 

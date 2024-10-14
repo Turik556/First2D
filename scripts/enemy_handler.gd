@@ -1,5 +1,6 @@
 extends Node
 class_name EnemyHandler
+@export var start_time:float = 1.5
 @export var Enemys: Array[PackedScene] =[]
 @export var mob_scene: PackedScene
 @onready var mob_spawn_location = $MobPath/MobSpawnLocation
@@ -11,6 +12,7 @@ func _ready() -> void:
 	Global.s_game_over.connect(end_game)
 	Global.s_froze_start.connect(on_froze_start)
 	Global.s_froze_ends.connect(on_froze_ends)
+	Global.s_score_is.connect(update_timer)
 	
 	
 	pass # Replace with function body.
@@ -18,6 +20,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	print ($MobTimer.wait_time)
 	pass
 
 func _on_mob_timer_timeout() -> void:
@@ -30,6 +33,7 @@ func on_mob_died(mob):
 
 func start_game():
 	$MobTimer.start()
+	$MobTimer.wait_time = start_time
 	pass
 func end_game():
 	$MobTimer.stop()
@@ -52,4 +56,9 @@ func spawn_enemy():
 	
 	add_child(mob)
 	mob.died.connect(on_mob_died)
+	pass
+
+func update_timer():
+	var current_timer = $MobTimer.wait_time
+	$MobTimer.wait_time = current_timer - 0.2
 	pass

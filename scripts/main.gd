@@ -3,7 +3,7 @@ extends Node
 @export var player_scene:PackedScene
 @export var item_scene: PackedScene
 
-var score
+var score:int
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -32,6 +32,12 @@ func new_game():
 func update_score(value):
 	score+=1
 	$HUD.update_score(score)
+	if score % 5 == 0:
+		print("yes")
+		Global.s_score_is.emit()
+	else:
+		print("no")	
+		
 	pass
 func _on_start_timer_timeout() -> void:
 	Global.s_start_game.emit
