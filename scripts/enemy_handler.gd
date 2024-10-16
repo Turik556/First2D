@@ -20,7 +20,6 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	print ($MobTimer.wait_time)
 	pass
 
 func _on_mob_timer_timeout() -> void:
@@ -61,4 +60,5 @@ func spawn_enemy():
 func update_timer():
 	var current_timer = $MobTimer.wait_time
 	$MobTimer.wait_time = current_timer - 0.2
+	print ($MobTimer.wait_time)
 	pass
