@@ -6,6 +6,7 @@
 
 [node name="FrozeItem" instance=ExtResource("1_jox1x")]
 script = ExtResource("2_d8jdg")
+item_name = "froze"
 item_probability_weight = 1.0
 item_active_time = 2.0
 

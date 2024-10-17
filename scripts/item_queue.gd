@@ -3,7 +3,8 @@ extends Node
 var queue =[]
 var froze_time: int = 1
 var speed_up_time: int = 3
-var is_size_changed:bool
+var is_size_changed:bool = false
+var is_frozed:bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Global.s_froze_start.connect(on_froze_start)
@@ -15,7 +16,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 func on_froze_start():
-	$FrozeTimer.start() 
+	$FrozeTimer.start()
+	is_frozed = true 
 	pass
 func add_to_interact_queue(item):
 	queue.append(item)
@@ -38,6 +40,7 @@ func _on_acceleration_time_timeout() -> void:
 
 func on_froze_timer_timeout() -> void:
 	Global.s_froze_ends.emit()
+	is_frozed = false
 	pass # Replace with function body.
 
 func start_timer(value:String):

@@ -79,6 +79,11 @@ func interact_with_item(body:Item):
 			change_size("bigger")
 	elif body.item_name == "shield":
 		$Shield.enable()
+	elif body.item_name =="froze":
+		if $ItemQueue.is_frozed:
+			$ItemQueue.add_time("FrozeTimer",body.item_active_time)
+		else:
+			Global.s_froze_start.emit()
 	$ItemQueue.add_to_interact_queue(body)
 	body.function()
 	pass
