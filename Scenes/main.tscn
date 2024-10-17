@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cveqi88yfygc1"]
+[gd_scene load_steps=10 format=3 uid="uid://cveqi88yfygc1"]
 
 [ext_resource type="PackedScene" uid="uid://cajufjns3158d" path="res://Scenes/Player.tscn" id="1_pm0dl"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_y5qig"]
@@ -9,17 +9,21 @@
 [ext_resource type="PackedScene" uid="uid://1tee4hpui1pn" path="res://Scenes/hud.tscn" id="4_yohv7"]
 [ext_resource type="PackedScene" uid="uid://b2thwqcug124p" path="res://Scenes/item_spawner.tscn" id="6_8ngv0"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wwyta"]
+
 [node name="Main" type="Node"]
 script = ExtResource("1_y5qig")
 player_scene = ExtResource("3_rwv84")
 item_scene = ExtResource("3_owb8q")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_left = -168.0
-offset_top = -1240.0
-offset_right = 1832.0
-offset_bottom = 760.0
+material = SubResource("ShaderMaterial_wwyta")
+offset_left = -16.0
+offset_top = -1216.0
+offset_right = 1984.0
+offset_bottom = 784.0
 texture = ExtResource("4_rjcux")
+stretch_mode = 6
 
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false
