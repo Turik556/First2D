@@ -5,3 +5,4 @@
 
 [node name="ChangeSizeItem" instance=ExtResource("1_71i8t")]
 script = ExtResource("2_yiydg")
+item_active_time = 4.0

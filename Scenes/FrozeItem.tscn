@@ -7,6 +7,7 @@
 [node name="FrozeItem" instance=ExtResource("1_jox1x")]
 script = ExtResource("2_d8jdg")
 item_probability_weight = 1.0
+item_active_time = 2.0
 
 [node name="Sprite2D" parent="." index="0"]
 self_modulate = Color(1, 1, 1, 1)

@@ -5,3 +5,4 @@
 
 [node name="Enemy_speed_up_item" instance=ExtResource("1_djijq")]
 script = ExtResource("2_0oqe8")
+item_active_time = 3.0
