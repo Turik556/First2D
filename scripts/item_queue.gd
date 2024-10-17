@@ -49,3 +49,12 @@ func start_timer(value:String):
 		"FrozeTimer":
 			$FrozeTimer.start()
 	pass
+func add_time(name:String, value:float):
+	match value:
+		"ChangeSizeTimer":
+			$ChangeSizeTimer.wait_time +=value
+		"AccelerationTimer":
+			$AccelerationTime.wait_time +=value
+		"FrozeTimer":
+			$FrozeTimer.wait_time +=value
+	pass

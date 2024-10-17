@@ -5,6 +5,7 @@ var item_sprite:Sprite2D
 @export var icon:Sprite2D
 @export var item_name:String
 @export var item_probability_weight:float
+@export var item_active_time:float
 var gravity:float = 0.5
 
 func _ready() -> void:

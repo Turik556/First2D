@@ -66,12 +66,13 @@ func interact_with_item(body:Item):
 	if body.item_name == null:
 		return
 	elif body.item_name == "smaller":
-		$ItemQueue.start_timer("ChangeSizeTimer")
-		#$ItemQueue/ChangeSizeTimer.start()
-		change_size("smaller")
+		if $ItemQueue.is_size_changed:
+			$ItemQueue.add_time("ChangeSizeTimer",body.item_active_time)
+		else:
+			$ItemQueue.start_timer("ChangeSizeTimer")
+			change_size("smaller")
 	elif body.item_name == "bigger":
 		$ItemQueue.start_timer("ChangeSizeTimer")
-		#$ItemQueue/ChangeSizeTimer.start()
 		change_size("bigger")
 	elif body.item_name == "shield":
 		$Shield.enable()
