@@ -42,8 +42,10 @@ func on_froze_timer_timeout() -> void:
 
 func start_timer(value:String):
 	match value:
-		"ChangeSizeTimer":
-			$ChangeSizeTimer.start()
+		"ChangeSizeToSmallTimer":
+			$ChangeSizeToSmallTimer.start()
+		"ChangeSizeToBiggerTimer":
+			$ChangeSizeToBiggerTimer.start()	
 		"AccelerationTimer":
 			$AccelerationTime.start()
 		"FrozeTimer":
@@ -51,10 +53,16 @@ func start_timer(value:String):
 	pass
 func add_time(name:String, value:float):
 	match value:
-		"ChangeSizeTimer":
-			$ChangeSizeTimer.wait_time +=value
+		"ChangeSizeToSmallTimer":
+			$ChangeSizeToSmallTimer.wait_time += value
+			print($ChangeSizeToSmallTimer.wait_time)
+		"ChangeSizeToBiggerTimer":
+			$ChangeSizeToBiggerTimer.wait_time += value	
+			print($ChangeSizeToBiggerTimer.wait_time)
 		"AccelerationTimer":
-			$AccelerationTime.wait_time +=value
+			$AccelerationTime.wait_time += value
+			print($AccelerationTime.wait_time)
 		"FrozeTimer":
-			$FrozeTimer.wait_time +=value
+			$FrozeTimer.wait_time += value
+			print($FrozeTimer.wait_time)
 	pass

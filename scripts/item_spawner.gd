@@ -1,6 +1,7 @@
 extends Node
 @export var Items: Array[PackedScene] =[]
 var rng = RandomNumberGenerator.new()
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	
@@ -24,6 +25,6 @@ func initialize():
 func _on_enemy_handler_s_died(mob) -> void:
 	var random_number = rng.randf_range(0.0,9.0)
 	#print(random_number)
-	if random_number < 1.5:
+	if random_number < 5:
 		spawn_item(mob.position)
 	pass # Replace with function body.

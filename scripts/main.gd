@@ -36,11 +36,7 @@ func update_score(value):
 	score+=1
 	$HUD.update_score(score)
 	if score % 5 == 0:
-		print("yes")
 		Global.s_score_is.emit()
-	else:
-		print("no")	
-		
 	pass
 func _on_start_timer_timeout() -> void:
 	Global.s_start_game.emit
@@ -57,5 +53,5 @@ func move_scene():
 			$TextureRect.position = Vector2(0.0,1.0 + pos)	
 		else:
 			$TextureRect.position = Vector2(0.0,-1000.0 + pos)		
-			print("jump")
+			#print("jump")
 pass
