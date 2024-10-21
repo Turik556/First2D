@@ -6,3 +6,4 @@
 [node name="Item_spawner" type="Node"]
 script = ExtResource("1_atpjg")
 Items = Array[PackedScene]([ExtResource("2_m14sg")])
+toggle_random = true

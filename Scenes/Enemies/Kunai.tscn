@@ -1,24 +1,53 @@
-[gd_scene load_steps=4 format=3 uid="uid://dl4o1kdwxxf6h"]
+[gd_scene load_steps=5 format=3 uid="uid://cn8r3ecjc3i8"]
 
-[ext_resource type="PackedScene" uid="uid://crmgdl0poacw7" path="res://Scenes/Enemies/mob.tscn" id="1_jpknx"]
-[ext_resource type="Texture2D" uid="uid://chsh112hgpsh8" path="res://art/Kunai_128.png" id="2_q0qwm"]
+[ext_resource type="Texture2D" uid="uid://chsh112hgpsh8" path="res://art/Kunai_128.png" id="1_3quxu"]
+[ext_resource type="Script" path="res://scripts/kunai.gd" id="1_ex2fy"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nq66i"]
-radius = 13.0
+[sub_resource type="Gradient" id="Gradient_5bsg8"]
+offsets = PackedFloat32Array(0.08, 0.626667)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gcydg"]
+radius = 14.0
 height = 130.0
 
-[node name="kunai" instance=ExtResource("1_jpknx")]
+[node name="Kunai" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 0
+gravity_scale = 0.0
+script = ExtResource("1_ex2fy")
 
-[node name="Sprite2D" parent="." index="0"]
-texture = ExtResource("2_q0qwm")
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_3quxu")
 
-[node name="CollisionShape2D" parent="." index="2"]
-shape = SubResource("CapsuleShape2D_nq66i")
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 25
+lifetime = 0.4
+one_shot = true
+explosiveness = 0.81
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 250.0
+initial_velocity_max = 250.0
+scale_amount_min = 5.0
+scale_amount_max = 15.0
+color = Color(1, 0.168627, 0.14902, 1)
+color_initial_ramp = SubResource("Gradient_5bsg8")
 
-[node name="VisibleOnScreenNotifier2D" parent="." index="3"]
-position = Vector2(0.74917, 0.125418)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_gcydg")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(1, 1)
 scale = Vector2(6.45882, 1.33966)
 
-[node name="Button" parent="." index="4"]
-offset_top = -13.0
-offset_bottom = 13.0
+[node name="Button" type="Button" parent="."]
+offset_left = -65.0
+offset_top = -1.0
+offset_right = 65.0
+offset_bottom = 25.0
+focus_mode = 0
+shortcut_feedback = false
+flat = true

@@ -1,24 +1,28 @@
 class_name kunai
 extends enemy
 
-var player: PackedScene = preload("res://Scenes/Player.tscn")
-var speed:float = 50
+var player 
+var speed:float = 500
+var pos
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	initialize()
-	_movement()
+	$AnimationPlayer.stop()
+	pos = player.get_pos()
+	look_at(pos)
+	rotation += PI
 	pass # Replace with function body.
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
+	velocity = (pos-position).normalized() * speed
+	move_and_collide((velocity+Vector2(100,100)) * delta)
 	pass
 func _movement():
-	var pos = player.get_pos()
-	velocity = position.direction_to(pos)* speed
 	pass
 
 func initialize():
+	player = get_node("/root/Main/Player")
 	Global.s_game_over.connect(die)
 	Global.s_froze_start.connect(on_froze_start)
 	Global.s_froze_ends.connect(on_item_effect_ends)

@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://ctvsu42r2m2b5"]
+
+[ext_resource type="PackedScene" uid="uid://crmgdl0poacw7" path="res://Scenes/Enemies/mob.tscn" id="1_5g4x5"]
+[ext_resource type="Texture2D" uid="uid://chsh112hgpsh8" path="res://art/Kunai_128.png" id="2_n5n04"]
+[ext_resource type="Script" path="res://scripts/kunai.gd" id="2_vr7w6"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xemd3"]
+radius = 14.0
+height = 72.0
+
+[node name="kunai" instance=ExtResource("1_5g4x5")]
+script = ExtResource("2_vr7w6")
+
+[node name="Sprite2D" parent="." index="0"]
+process_mode = 4
+texture = ExtResource("2_n5n04")
+
+[node name="CollisionShape2D" parent="." index="2"]
+position = Vector2(-27, 0.000120521)
+shape = SubResource("CapsuleShape2D_xemd3")
+
+[node name="VisibleOnScreenNotifier2D" parent="." index="3"]
+position = Vector2(0.297302, 0.499993)
+scale = Vector2(6.32167, 1.40673)
+
+[node name="Button" parent="." index="4"]
+offset_top = -15.0
+offset_bottom = 14.0
+
+[node name="CPUParticles2D" parent="." index="5"]
+position = Vector2(0, 0)
