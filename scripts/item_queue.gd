@@ -16,13 +16,13 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 func on_froze_start():
+	$FrozeTimer.wait_time = 2
 	$FrozeTimer.start()
 	is_frozed = true 
 	pass
 func add_to_interact_queue(item):
 	queue.append(item)
 	pass
-
 
 func _on_change_size_timer_timeout() -> void:
 	player.change_size("initial")
@@ -41,6 +41,7 @@ func _on_acceleration_time_timeout() -> void:
 func on_froze_timer_timeout() -> void:
 	Global.s_froze_ends.emit()
 	is_frozed = false
+	
 	pass # Replace with function body.
 
 func start_timer(value:String):
@@ -55,17 +56,14 @@ func start_timer(value:String):
 			$FrozeTimer.start()
 	pass
 func add_time(name:String, value:float):
-	match value:
+	match name:
 		"ChangeSizeToSmallTimer":
-			$ChangeSizeToSmallTimer.wait_time += value
-			print($ChangeSizeToSmallTimer.wait_time)
+			$ChangeSizeToSmallTimer.start($ChangeSizeToSmallTimer.time_left + value)
 		"ChangeSizeToBiggerTimer":
-			$ChangeSizeToBiggerTimer.wait_time += value	
-			print($ChangeSizeToBiggerTimer.wait_time)
+			$ChangeSizeToBiggerTimer.start($ChangeSizeToBiggerTimer.time_left + value)	
 		"AccelerationTimer":
-			$AccelerationTime.wait_time += value
-			print($AccelerationTime.wait_time)
+			$AccelerationTime.start($AccelerationTime.time_left +value)
 		"FrozeTimer":
-			$FrozeTimer.wait_time += value
-			print($FrozeTimer.wait_time)
+			$FrozeTimer.start($FrozeTimer.time_left + value)
+			print($FrozeTimer.time_left)
 	pass

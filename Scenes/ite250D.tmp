@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://cnq5205a782qa"]
+
+[ext_resource type="Script" path="res://scripts/item_queue.gd" id="1_t7lrf"]
+
+[node name="ItemQueue" type="Node"]
+script = ExtResource("1_t7lrf")
+
+[node name="ChangeSizeToSmallTimer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+
+[node name="AccelerationTime" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="FrozeTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="ChangeSizeToBiggerTimer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+
+[connection signal="timeout" from="ChangeSizeToSmallTimer" to="." method="_on_change_size_timer_timeout"]
+[connection signal="timeout" from="AccelerationTime" to="." method="_on_acceleration_time_timeout"]
+[connection signal="timeout" from="FrozeTimer" to="." method="on_froze_timer_timeout"]
+[connection signal="timeout" from="ChangeSizeToBiggerTimer" to="." method="_on_change_size_timer_timeout"]
