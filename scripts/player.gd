@@ -1,6 +1,7 @@
 extends Area2D
-signal hit
 
+class_name player
+signal hit
 @export var speed = 400 # How fast the player will move (pixels/sec).
 var screen_size # Size of the game window.
 
@@ -98,3 +99,7 @@ func change_size(value:String):
 	if value == "initial":
 		scale =Vector2(1,1)	
 	pass
+
+func get_pos() -> Vector2:
+	return global_position
+	pass	

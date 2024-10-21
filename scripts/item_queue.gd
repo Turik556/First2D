@@ -41,8 +41,7 @@ func _on_acceleration_time_timeout() -> void:
 func on_froze_timer_timeout() -> void:
 	Global.s_froze_ends.emit()
 	is_frozed = false
-	
-	pass # Replace with function body.
+	pass 
 
 func start_timer(value:String):
 	match value:

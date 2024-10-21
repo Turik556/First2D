@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://crmgdl0poacw7"]
 
-[ext_resource type="Script" path="res://scripts/mob.gd" id="1_ccvon"]
-[ext_resource type="Texture2D" uid="uid://c0nbuq6rjuljq" path="res://art/saw_64/saw_64_0.png" id="2_6pwmh"]
+[ext_resource type="Script" path="res://scripts/mob.gd" id="1_wenyy"]
+[ext_resource type="Texture2D" uid="uid://c0nbuq6rjuljq" path="res://art/saw_64/saw_64_0.png" id="2_uyp1r"]
 
 [sub_resource type="Animation" id="Animation_br4kg"]
 length = 0.001
@@ -51,11 +51,11 @@ rotation = 6.28319
 collision_layer = 2
 collision_mask = 0
 gravity_scale = 0.0
-script = ExtResource("1_ccvon")
+script = ExtResource("1_wenyy")
 metadata/type = "enemy"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_6pwmh")
+texture = ExtResource("2_uyp1r")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 process_mode = 1
