@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bqi3n4fssgs2l"]
+[gd_scene load_steps=7 format=3 uid="uid://bqi3n4fssgs2l"]
 
 [ext_resource type="Script" path="res://scripts/enemy_handler.gd" id="1_15j12"]
+[ext_resource type="PackedScene" uid="uid://dn3uhqj24rcyi" path="res://Scenes/Enemies/saw_64.tscn" id="2_fia5u"]
 [ext_resource type="PackedScene" uid="uid://ctvsu42r2m2b5" path="res://Scenes/Enemies/kunai_.tscn" id="2_mjaxh"]
 [ext_resource type="PackedScene" uid="uid://4i2iyednab76" path="res://Scenes/Enemies/shuriken.tscn" id="3_cd12b"]
+[ext_resource type="PackedScene" uid="uid://b8fo4f7bqh0e3" path="res://Scenes/Enemies/saw_128.tscn" id="4_6kce5"]
 
 [sub_resource type="Curve2D" id="Curve2D_mvari"]
 _data = {
@@ -12,7 +14,7 @@ point_count = 5
 
 [node name="EnemyHandler" type="Node"]
 script = ExtResource("1_15j12")
-Enemys = Array[PackedScene]([ExtResource("2_mjaxh")])
+Enemys = Array[PackedScene]([ExtResource("2_mjaxh"), ExtResource("2_fia5u"), ExtResource("4_6kce5"), ExtResource("3_cd12b")])
 mob_scene = ExtResource("3_cd12b")
 
 [node name="MobTimer" type="Timer" parent="."]

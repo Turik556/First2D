@@ -52,7 +52,7 @@ func spawn_enemy():
 	var mob = Enemys.pick_random().instantiate()
 	var mob_spawn_location = $MobPath/MobSpawnLocation
 	mob_spawn_location.progress_ratio = randf()
-	print("Spawn pos = ", get_spawn_location().position)
+	
 	
 	add_child(mob)
 	mob.died.connect(on_mob_died)

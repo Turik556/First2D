@@ -14,7 +14,6 @@ func _physics_process(delta: float) -> void:
 	move_and_collide(velocity * delta)
 	pass
 
-
 func initialize():
 	$AnimationPlayer.stop()
 	player = get_node("/root/Main/Player")
