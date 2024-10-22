@@ -15,8 +15,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	velocity = (pos-position).normalized() * speed
-	move_and_collide((velocity+Vector2(100,100)) * delta)
+	velocity = (pos*10-position).normalized() * speed
+	move_and_collide((velocity) * delta)
 	pass
 func _movement():
 	pass
