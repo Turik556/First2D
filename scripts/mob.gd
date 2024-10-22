@@ -4,6 +4,7 @@ class_name enemy
 @export var mob_scene:PackedScene
 @onready var handler = get_parent()
 signal died(value)
+@export var speed:float
 @export var velocity:Vector2
 var acceleration:float = 2
 var direction:float

@@ -10,6 +10,7 @@ height = 72.0
 
 [node name="kunai" instance=ExtResource("1_5g4x5")]
 script = ExtResource("2_vr7w6")
+speed = 250.0
 
 [node name="Sprite2D" parent="." index="0"]
 process_mode = 4

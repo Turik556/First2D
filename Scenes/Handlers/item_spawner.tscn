@@ -1,9 +1,8 @@
 [gd_scene load_steps=3 format=3 uid="uid://b2thwqcug124p"]
 
 [ext_resource type="Script" path="res://scripts/item_spawner.gd" id="1_j3mru"]
-[ext_resource type="PackedScene" uid="uid://ck7xvwlf8xbcu" path="res://Scenes/Items/FrozeItem.tscn" id="2_rw425"]
+[ext_resource type="PackedScene" uid="uid://pvr776ugj5v" path="res://Scenes/Items/enemy_speed_up_item.tscn" id="2_aktuk"]
 
 [node name="Item_spawner" type="Node"]
 script = ExtResource("1_j3mru")
-Items = Array[PackedScene]([ExtResource("2_rw425")])
-toggle_random = true
+Items = Array[PackedScene]([ExtResource("2_aktuk")])

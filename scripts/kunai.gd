@@ -2,18 +2,15 @@ class_name kunai
 extends enemy
 
 var player 
-var speed:float = 500
 var pos
+var _velocity:Vector2
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	initialize()
-	look_at(pos)
-	rotation += PI
-	pass # Replace with function body.
+	pass # Replace with function body
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	
 	move_and_collide(velocity * delta)
 	pass
 
@@ -28,7 +25,19 @@ func initialize():
 	Global.s_speed_up_ends.connect(on_item_effect_ends)
 	spawn_pos = handler.get_spawn_location() 
 	position = spawn_pos.position
-	print(position)
 	pos = player.get_pos() 
 	velocity = (pos-position).normalized() * speed 
+	look_at(pos)
+	rotation += PI
+	pass
+
+func on_froze_start():
+	print("check")
+	_velocity = velocity
+	velocity = Vector2.ZERO
+	modulate = Color("#0005ff")
+	pass
+func on_item_effect_ends():
+	velocity = _velocity
+	modulate = Color("#ffffff")
 	pass
