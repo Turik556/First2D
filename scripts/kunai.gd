@@ -41,3 +41,8 @@ func on_item_effect_ends():
 	velocity = _velocity
 	modulate = Color("#ffffff")
 	pass
+
+func on_speed_up_start():
+	_velocity = velocity
+	velocity *=2
+	pass
