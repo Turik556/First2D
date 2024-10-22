@@ -9,11 +9,14 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("pause"): 
-		if _paused == false:
-			get_tree().paused = true
-			_paused = true
-		else:
-			get_tree().paused = false
-			_paused = false
+		pause_game()
 	pass
+	pass
+func pause_game():
+	if _paused == false:
+		get_tree().paused = true
+		_paused = true
+	else:
+		get_tree().paused = false
+		_paused = false
 	pass
