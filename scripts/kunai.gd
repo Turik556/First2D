@@ -16,7 +16,7 @@ func _physics_process(delta: float) -> void:
 
 func initialize():
 	$AnimationPlayer.stop()
-	player = get_node("/root/Main/Player")
+	player = get_node("/root/Game/Main/Player")
 	Global.s_game_over.connect(die)
 	Global.s_froze_start.connect(on_froze_start)
 	Global.s_froze_ends.connect(on_item_effect_ends)

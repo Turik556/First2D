@@ -14,7 +14,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	move_scene()
-	pass
+	
 
 func game_over() -> void:
 	$HUD.show_game_over()

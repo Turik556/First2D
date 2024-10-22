@@ -12,42 +12,40 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wwyta"]
 
 [node name="Main" type="Node"]
+process_mode = 3
 script = ExtResource("1_y5qig")
 player_scene = ExtResource("3_rwv84")
 item_scene = ExtResource("3_owb8q")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 material = SubResource("ShaderMaterial_wwyta")
-offset_left = -16.0
-offset_top = -1216.0
-offset_right = 1984.0
-offset_bottom = 784.0
+offset_left = -833.0
+offset_top = -1146.0
+offset_right = 1167.0
+offset_bottom = 854.0
 texture = ExtResource("4_rjcux")
 stretch_mode = 6
 
-[node name="ColorRect" type="ColorRect" parent="."]
-visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.322663, 0.534388, 0.954947, 1)
-
 [node name="Player" parent="." instance=ExtResource("1_pm0dl")]
+process_mode = 1
 
 [node name="EnemyHandler" parent="." instance=ExtResource("4_ybo78")]
+process_mode = 1
 
 [node name="Item_spawner" parent="." instance=ExtResource("6_8ngv0")]
+process_mode = 1
 
 [node name="StartTimer" type="Timer" parent="."]
+process_mode = 1
 wait_time = 2.0
 one_shot = true
 
 [node name="StartPosition" type="Marker2D" parent="."]
+process_mode = 1
 position = Vector2(240, 450)
 
 [node name="HUD" parent="." instance=ExtResource("4_yohv7")]
+process_mode = 1
 
 [connection signal="hit" from="Player" to="." method="game_over"]
 [connection signal="s_died" from="EnemyHandler" to="." method="_on_enemy_handler_s_died"]

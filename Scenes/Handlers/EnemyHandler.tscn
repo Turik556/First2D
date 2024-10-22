@@ -8,9 +8,9 @@
 
 [sub_resource type="Curve2D" id="Curve2D_mvari"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, -8, 0, 0, 0, 0, 480, 0, 0, 0, 0, 0, 480, 720, 0, 0, 0, 0, 0, 720, 0, 0, 0, 0, 0, -8)
+"points": PackedVector2Array(0, 0, 0, 0, 0, -8, 0, 0, 0, 0, 720, -4, 0, 0, 0, 0, 720, 356, 0, 0, 0, 0, 720, 715, 0, 0, 0, 0, 0, 720, 0, 0, 0, 0, 0, -8)
 }
-point_count = 5
+point_count = 6
 
 [node name="EnemyHandler" type="Node"]
 script = ExtResource("1_15j12")
@@ -26,6 +26,6 @@ curve = SubResource("Curve2D_mvari")
 
 [node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath"]
 position = Vector2(0, -8)
-rotation = 0.0166651
+rotation = 0.0055555
 
 [connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
