@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://bqi3n4fssgs2l"]
 
-[ext_resource type="Script" path="res://scripts/enemy_handler.gd" id="1_3gvam"]
-[ext_resource type="PackedScene" uid="uid://ctvsu42r2m2b5" path="res://Scenes/Enemies/kunai_.tscn" id="2_dk0vh"]
-[ext_resource type="PackedScene" uid="uid://4i2iyednab76" path="res://Scenes/Enemies/shuriken.tscn" id="2_ylr5j"]
+[ext_resource type="Script" path="res://scripts/enemy_handler.gd" id="1_15j12"]
+[ext_resource type="PackedScene" uid="uid://ctvsu42r2m2b5" path="res://Scenes/Enemies/kunai_.tscn" id="2_mjaxh"]
+[ext_resource type="PackedScene" uid="uid://4i2iyednab76" path="res://Scenes/Enemies/shuriken.tscn" id="3_cd12b"]
 
 [sub_resource type="Curve2D" id="Curve2D_mvari"]
 _data = {
@@ -11,9 +11,9 @@ _data = {
 point_count = 5
 
 [node name="EnemyHandler" type="Node"]
-script = ExtResource("1_3gvam")
-Enemys = Array[PackedScene]([ExtResource("2_dk0vh")])
-mob_scene = ExtResource("2_ylr5j")
+script = ExtResource("1_15j12")
+Enemys = Array[PackedScene]([ExtResource("2_mjaxh")])
+mob_scene = ExtResource("3_cd12b")
 
 [node name="MobTimer" type="Timer" parent="."]
 process_mode = 1
