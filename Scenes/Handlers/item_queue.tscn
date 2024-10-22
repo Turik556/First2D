@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://cnq5205a782qa"]
 
-[ext_resource type="Script" path="res://scripts/item_queue.gd" id="1_t7lrf"]
+[ext_resource type="Script" path="res://scripts/item_queue.gd" id="1_war83"]
 
 [node name="ItemQueue" type="Node"]
-script = ExtResource("1_t7lrf")
+script = ExtResource("1_war83")
 
 [node name="ChangeSizeToSmallTimer" type="Timer" parent="."]
 wait_time = 4.0
