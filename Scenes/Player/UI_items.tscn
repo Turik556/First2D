@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bvhv8wlvdh61w"]
+[gd_scene load_steps=3 format=3 uid="uid://bvhv8wlvdh61w"]
 
 [ext_resource type="Script" path="res://UI_items.gd" id="1_gqfje"]
+[ext_resource type="Texture2D" uid="uid://ccchuskesatln" path="res://art/items/icons/shield.png" id="2_yytlc"]
 
 [node name="HBoxContainer" type="HBoxContainer"]
 offset_right = 40.0
@@ -12,3 +13,4 @@ layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="BoxContainer"]
 layout_mode = 2
+texture = ExtResource("2_yytlc")

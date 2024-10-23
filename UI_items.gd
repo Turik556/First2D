@@ -4,7 +4,7 @@ class_name UI_item
 var icons_dict = { 
 	"froze": preload("res://art/items/snowflake.png"),
 	"speed_up" : "str ",
-	"shield" : "shield"
+	"shield" : preload("res://art/items/icons/shield.png")
 	
 }
 # Called when the node enters the scene tree for the first time.
