@@ -66,3 +66,8 @@ func add_time(name:String, value:float):
 			$FrozeTimer.start($FrozeTimer.time_left + value)
 			print($FrozeTimer.time_left)
 	pass
+
+
+func get_queue() -> Array:
+	return queue
+	pass
