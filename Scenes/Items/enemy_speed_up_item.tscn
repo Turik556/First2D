@@ -6,6 +6,7 @@
 
 [node name="Enemy_speed_up_item" instance=ExtResource("1_djijq")]
 script = ExtResource("2_0oqe8")
+item_name = "speed_up"
 item_active_time = 3.0
 
 [node name="Sprite2D" parent="." index="0"]
