@@ -1,15 +1,22 @@
-[gd_scene load_steps=10 format=3 uid="uid://cveqi88yfygc1"]
+[gd_scene load_steps=11 format=3 uid="uid://cveqi88yfygc1"]
 
 [ext_resource type="PackedScene" uid="uid://cajufjns3158d" path="res://Scenes/Player/Player.tscn" id="1_pm0dl"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_y5qig"]
 [ext_resource type="PackedScene" uid="uid://pvr776ugj5v" path="res://Scenes/Items/enemy_speed_up_item.tscn" id="3_owb8q"]
 [ext_resource type="PackedScene" uid="uid://dxl8mpdnhg8dq" path="res://Scenes/Items/item.tscn" id="3_rwv84"]
+[ext_resource type="Shader" path="res://art/shaders/background.gdshader" id="4_rd5yi"]
 [ext_resource type="Texture2D" uid="uid://hp1svvvhp1bo" path="res://art/8614580.jpg" id="4_rjcux"]
 [ext_resource type="PackedScene" uid="uid://bqi3n4fssgs2l" path="res://Scenes/Handlers/EnemyHandler.tscn" id="4_ybo78"]
 [ext_resource type="PackedScene" uid="uid://1tee4hpui1pn" path="res://Scenes/hud.tscn" id="4_yohv7"]
 [ext_resource type="PackedScene" uid="uid://b2thwqcug124p" path="res://Scenes/Handlers/item_spawner.tscn" id="6_8ngv0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wwyta"]
+shader = ExtResource("4_rd5yi")
+shader_parameter/scroll_speed = 0.05
+shader_parameter/angle_degrees = 90.0
+shader_parameter/repeat_x = 1.0
+shader_parameter/repeat_y = 1.0
+shader_parameter/tint = Color(1, 1, 1, 1)
 
 [node name="Main" type="Node"]
 process_mode = 3
@@ -19,10 +26,10 @@ item_scene = ExtResource("3_owb8q")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 material = SubResource("ShaderMaterial_wwyta")
-offset_left = -833.0
-offset_top = -1146.0
-offset_right = 1167.0
-offset_bottom = 854.0
+offset_left = -646.0
+offset_top = -927.0
+offset_right = 1354.0
+offset_bottom = 1073.0
 texture = ExtResource("4_rjcux")
 stretch_mode = 6
 

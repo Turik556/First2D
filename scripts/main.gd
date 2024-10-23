@@ -13,8 +13,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	move_scene()
-	
+	pass
 
 func game_over() -> void:
 	$HUD.show_game_over()
@@ -46,12 +45,5 @@ func _on_enemy_handler_s_died(mob) -> void:
 	update_score(1)
 	
 	pass # Replace with function body.
-func move_scene():
-	pos = $TextureRect.position.y
-	if is_game_started:
-		if pos < 0 :
-			$TextureRect.position = Vector2(0.0,1.0 + pos)	
-		else:
-			$TextureRect.position = Vector2(0.0,-1000.0 + pos)		
-			#print("jump")
+
 pass

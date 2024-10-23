@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://1tee4hpui1pn"]
+[gd_scene load_steps=4 format=3 uid="uid://1tee4hpui1pn"]
 
 [ext_resource type="Script" path="res://scripts/hud.gd" id="1_x673g"]
 [ext_resource type="FontFile" uid="uid://b51lbo8bk5ry6" path="res://art/fonts/Xolonium-Regular.ttf" id="2_sjmoo"]
+[ext_resource type="Texture2D" uid="uid://jkbvivc728q1" path="res://art/items/snowflake_128.png" id="3_17sqm"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_x673g")
@@ -69,6 +70,21 @@ offset_bottom = -612.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Pause"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_right = 209.0
+offset_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_17sqm")
+expand_mode = 3
 
 [connection signal="timeout" from="MessageTimer" to="." method="_on_message_timer_timeout"]
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
