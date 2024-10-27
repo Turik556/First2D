@@ -21,7 +21,7 @@ one_shot = true
 wait_time = 4.0
 one_shot = true
 
-[connection signal="timeout" from="ChangeSizeToSmallTimer" to="." method="_on_change_size_timer_timeout"]
+[connection signal="timeout" from="ChangeSizeToSmallTimer" to="." method="_on_change_size_to_small_timer_timeout"]
 [connection signal="timeout" from="AccelerationTime" to="." method="_on_acceleration_time_timeout"]
 [connection signal="timeout" from="FrozeTimer" to="." method="on_froze_timer_timeout"]
-[connection signal="timeout" from="ChangeSizeToBiggerTimer" to="." method="_on_change_size_timer_timeout"]
+[connection signal="timeout" from="ChangeSizeToBiggerTimer" to="." method="_on_change_size_to_bigger_timer_timeout"]

@@ -94,7 +94,7 @@ func interact_with_item(body:Item):
 		if $ItemQueue.is_frozed:
 			$ItemQueue.add_time("FrozeTimer",body.item_active_time)
 		else:
-			Global.s_froze_start.emit()
+			$ItemQueue.start_timer("FrozeTimer")
 	$ItemQueue.add_to_interact_queue(body)
 	body.function()
 	pass

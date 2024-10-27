@@ -22,10 +22,6 @@ func on_froze_start():
 func add_to_interact_queue(item):
 	queue.append(item)
 	pass
-
-func _on_change_size_timer_timeout() -> void:
-	player.change_size("initial")
-	pass 
 	
 func on_speed_up_start():
 	$AccelerationTime.start(speed_up_time)
@@ -45,12 +41,17 @@ func start_timer(value:String):
 	match value:
 		"ChangeSizeToSmallTimer":
 			$ChangeSizeToSmallTimer.start()
+			Global.s_change_size_s_start.emit()
 		"ChangeSizeToBiggerTimer":
 			$ChangeSizeToBiggerTimer.start()	
+			Global.s_change_size_b_start.emit()
 		"AccelerationTimer":
 			$AccelerationTime.start()
+			Global.s_speed_up_start.emit()
 		"FrozeTimer":
 			$FrozeTimer.start()
+			Global.s_froze_start.emit()
+		
 	pass
 	
 	debug()
@@ -92,3 +93,15 @@ func stop_timer(name:String):
 		"FrozeTimer":
 			$FrozeTimer.stop()
 	pass
+
+
+func _on_change_size_to_small_timer_timeout() -> void:
+	player.change_size("initial")
+	Global.s_change_size_s_ends.emit()
+	pass # Replace with function body.
+
+
+func _on_change_size_to_bigger_timer_timeout() -> void:
+	player.change_size("initial")
+	Global.s_change_size_b_ends.emit()
+	pass # Replace with function body.

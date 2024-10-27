@@ -16,15 +16,18 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-
 func set_texture(value):
 	$BoxContainer/TextureRect.texture = icons_dict[value]
 	pass
 
 func initialize():
-	Global.s_game_over.connect(game_over)
-	Global.s_froze_start.connect(on_froze_start)
-	Global.s_froze_ends.connect(on_item_effect_ends)
-	Global.s_speed_up.connect(on_speed_up_start)
-	Global.s_speed_up_ends.connect(on_item_effect_ends)
+	Global.s_game_over.connect()
+	Global.s_froze_start.connect()
+	Global.s_froze_ends.connect()
+	Global.s_speed_up_start.connect()
+	Global.s_speed_up_ends.connect()
+	Global.s_change_size_s_start.connect()
+	Global.s_change_size_s_ends.connect()
+	Global.s_change_size_b_start.connect()
+	Global.s_change_size_b_ends.connect()
 	pass
