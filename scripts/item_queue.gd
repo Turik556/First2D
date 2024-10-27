@@ -52,6 +52,9 @@ func start_timer(value:String):
 		"FrozeTimer":
 			$FrozeTimer.start()
 	pass
+	
+	debug()
+	
 func add_time(name:String, value:float):
 	match name:
 		"ChangeSizeToSmallTimer":
@@ -63,9 +66,29 @@ func add_time(name:String, value:float):
 		"FrozeTimer":
 			$FrozeTimer.start($FrozeTimer.time_left + value)
 			print($FrozeTimer.time_left)
+	debug()
 	pass
 
 
 func get_queue() -> Array:
 	return queue
+	pass
+func debug():
+	print("small_time =", $ChangeSizeToSmallTimer.time_left)
+	print ("accel_time =", $AccelerationTime.time_left)
+	print("froze_time=", $FrozeTimer.time_left)
+	print("big_time = ", $ChangeSizeToBiggerTimer.time_left)
+	pass
+
+
+func stop_timer(name:String):
+	match name:
+		"ChangeSizeToSmallTimer":
+			$ChangeSizeToSmallTimer.stop()
+		"ChangeSizeToBiggerTimer":
+			$ChangeSizeToBiggerTimer.stop()	
+		"AccelerationTimer":
+			$AccelerationTime.stop()
+		"FrozeTimer":
+			$FrozeTimer.stop()
 	pass
