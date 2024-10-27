@@ -4,6 +4,8 @@ class_name player
 signal hit
 @export var speed = 400 # How fast the player will move (pixels/sec).
 var screen_size # Size of the game window.
+var is_big = false
+var is_small = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -67,17 +69,23 @@ func interact_with_item(body:Item):
 	if body.item_name == null:
 		return
 	elif body.item_name == "smaller":
-		if $ItemQueue.is_size_changed:
+		if is_small:
 			$ItemQueue.add_time("ChangeSizeToSmallerTimer",body.item_active_time)
-		else:
+		elif is_big:
+			change_size("initial")
+		else: 
 			$ItemQueue.start_timer("ChangeSizeToSmallerTimer")
 			change_size("smaller")
+			is_small = true
 	elif body.item_name == "bigger":
-		if $ItemQueue.is_size_changed:
+		if is_big:
 			$ItemQueue.add_time("ChangeSizeToBiggerTimer",body.item_active_time)
-		else: 
+		elif is_small:
+			change_size("initial") 
+		else:
 			$ItemQueue.start_timer("ChangeSizeToBiggerTimer")
 			change_size("bigger")
+			is_big = true
 	elif body.item_name == "shield":
 		$Shield.enable()
 	elif body.item_name =="froze":
@@ -98,6 +106,8 @@ func change_size(value:String):
 		scale =_scale*2
 	if value == "initial":
 		scale =Vector2(1,1)	
+		is_big = false
+		is_small = false
 	pass
 
 func get_pos() -> Vector2:

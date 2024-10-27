@@ -17,6 +17,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-func set_texture():
-	
+func set_texture(value):
+	$BoxContainer/TextureRect.texture = icons_dict[value]
 	pass

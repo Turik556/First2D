@@ -3,7 +3,6 @@ extends Node
 var queue =[]
 var froze_time: int = 1
 var speed_up_time: int = 3
-var is_size_changed:bool = false
 var is_frozed:bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -26,7 +25,6 @@ func add_to_interact_queue(item):
 
 func _on_change_size_timer_timeout() -> void:
 	player.change_size("initial")
-	is_size_changed = false
 	pass 
 	
 func on_speed_up_start():
