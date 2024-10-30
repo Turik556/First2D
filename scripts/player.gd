@@ -66,36 +66,46 @@ func die():
 	pass	
 		
 func interact_with_item(body:Item):	
+	
 	if body.item_name == null:
 		return
-	elif body.item_name == "smaller":
-		if is_small:
-			$ItemQueue.add_time("ChangeSizeToSmallerTimer",body.item_active_time)
-		elif is_big:
-			change_size("initial")
-			$ItemQueue.stop_timer("ChangeSizeToSmallerTimer")
-		else: 
-			$ItemQueue.start_timer("ChangeSizeToSmallerTimer")
-			change_size("smaller")
-			is_small = true
-	elif body.item_name == "bigger":
-		if is_big:
-			$ItemQueue.add_time("ChangeSizeToBiggerTimer",body.item_active_time)
-		elif is_small:
-			change_size("initial") 
-			$ItemQueue.stop_timer("ChangeSizeToBiggerTimer")
-		else:
-			$ItemQueue.start_timer("ChangeSizeToBiggerTimer")
-			change_size("bigger")
-			is_big = true
-	elif body.item_name == "shield":
-		$Shield.enable()
-	elif body.item_name =="froze":
-		if $ItemQueue.is_frozed:
-			$ItemQueue.add_time("FrozeTimer",body.item_active_time)
-		else:
-			$ItemQueue.start_timer("FrozeTimer")
-	$ItemQueue.add_to_interact_queue(body)
+	else:
+		match body.item_name:
+			"smaller":
+				if is_small:
+					$ItemQueue.add_time("ChangeSizeToSmallerTimer",body.item_active_time)
+				elif is_big:
+					change_size("initial")
+					$ItemQueue.stop_timer("ChangeSizeToSmallerTimer")
+				else: 
+					$ItemQueue.start_timer("ChangeSizeToSmallerTimer")
+					change_size("smaller")
+					is_small = true
+			"bigger":
+				if is_big:
+					$ItemQueue.add_time("ChangeSizeToBiggerTimer",body.item_active_time)
+				elif is_small:
+					change_size("initial") 
+					$ItemQueue.stop_timer("ChangeSizeToBiggerTimer")
+				else:
+					$ItemQueue.start_timer("ChangeSizeToBiggerTimer")
+					change_size("bigger")
+					is_big = true
+			"shield":
+					$Shield.enable()
+			"froze":
+				if $ItemQueue.is_frozed:
+					$ItemQueue.add_time("FrozeTimer",body.item_active_time)
+				else:
+					$ItemQueue.start_timer("FrozeTimer")
+					
+			"speed_up":
+				if $ItemQueue.is_speed_up:
+					$ItemQueue.add_time("speed_up",body.item_active_time)
+				else: 
+					$ItemQueue.start_timer("speed_up_timer")
+					
+	$ItemQueue.add_to_interact_queue(body)					
 	body.function()
 	pass
 

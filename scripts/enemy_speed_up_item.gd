@@ -12,6 +12,5 @@ func _process(delta: float) -> void:
 	pass
 
 func function():
-	Global.s_speed_up.emit()
 	remove()
 	pass

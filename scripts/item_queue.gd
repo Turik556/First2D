@@ -3,11 +3,12 @@ extends Node
 var queue =[]
 var froze_time: int = 1
 var speed_up_time: int = 3
-var is_frozed:bool = false
+var is_frozed = false
+var is_speed_up = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Global.s_froze_start.connect(on_froze_start)
-	Global.s_speed_up.connect(on_speed_up_start)
+	Global.s_speed_up_start.connect(on_speed_up_start)
 	
 	pass # Replace with function body.a
 
@@ -31,7 +32,6 @@ func _on_acceleration_time_timeout() -> void:
 	Global.s_speed_up_ends.emit()
 	pass # Replace with function body.
 
-
 func on_froze_timer_timeout() -> void:
 	Global.s_froze_ends.emit()
 	is_frozed = false
@@ -51,7 +51,9 @@ func start_timer(value:String):
 		"FrozeTimer":
 			$FrozeTimer.start()
 			Global.s_froze_start.emit()
-		
+		"speed_up_timer":
+			$AccelerationTime.start()
+			Global.s_speed_up_start.emit()
 	pass
 	
 	debug()
@@ -63,13 +65,12 @@ func add_time(name:String, value:float):
 		"ChangeSizeToBiggerTimer":
 			$ChangeSizeToBiggerTimer.start($ChangeSizeToBiggerTimer.time_left + value)	
 		"AccelerationTimer":
-			$AccelerationTime.start($AccelerationTime.time_left +value)
+			$AccelerationTime.start($AccelerationTime.time_left + value)
 		"FrozeTimer":
 			$FrozeTimer.start($FrozeTimer.time_left + value)
 			print($FrozeTimer.time_left)
 	debug()
 	pass
-
 
 func get_queue() -> Array:
 	return queue
@@ -80,7 +81,6 @@ func debug():
 	print("froze_time=", $FrozeTimer.time_left)
 	print("big_time = ", $ChangeSizeToBiggerTimer.time_left)
 	pass
-
 
 func stop_timer(name:String):
 	match name:
@@ -94,12 +94,10 @@ func stop_timer(name:String):
 			$FrozeTimer.stop()
 	pass
 
-
 func _on_change_size_to_small_timer_timeout() -> void:
 	player.change_size("initial")
 	Global.s_change_size_s_ends.emit()
 	pass # Replace with function body.
-
 
 func _on_change_size_to_bigger_timer_timeout() -> void:
 	player.change_size("initial")

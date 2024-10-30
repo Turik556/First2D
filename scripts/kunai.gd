@@ -20,7 +20,7 @@ func initialize():
 	Global.s_game_over.connect(die)
 	Global.s_froze_start.connect(on_froze_start)
 	Global.s_froze_ends.connect(on_item_effect_ends)
-	Global.s_speed_up.connect(on_speed_up_start)
+	Global.s_speed_up_start.connect(on_speed_up_start)
 	Global.s_speed_up_ends.connect(on_item_effect_ends)
 	spawn_pos = handler.get_spawn_location() 
 	position = spawn_pos.position
