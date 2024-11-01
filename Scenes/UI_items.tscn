@@ -1,16 +1,16 @@
 [gd_scene load_steps=3 format=3 uid="uid://bvhv8wlvdh61w"]
 
 [ext_resource type="Script" path="res://UI_items.gd" id="1_de6ud"]
-[ext_resource type="Texture2D" uid="uid://ccchuskesatln" path="res://art/items/icons/shield.png" id="2_xugr3"]
+[ext_resource type="PackedScene" uid="uid://bgum4q86tsiip" path="res://Scenes/icon_box.tscn" id="2_jmahw"]
 
 [node name="HBoxContainer" type="HBoxContainer"]
-offset_right = 40.0
-offset_bottom = 40.0
 script = ExtResource("1_de6ud")
 
-[node name="BoxContainer" type="BoxContainer" parent="."]
+[node name="Icon_box" parent="." instance=ExtResource("2_jmahw")]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="BoxContainer"]
+[node name="Icon_box2" parent="." instance=ExtResource("2_jmahw")]
 layout_mode = 2
-texture = ExtResource("2_xugr3")
+
+[node name="Icon_box3" parent="." instance=ExtResource("2_jmahw")]
+layout_mode = 2

@@ -7,7 +7,7 @@ signal s_change_size_b_start
 signal s_change_size_s_ends
 signal s_change_size_b_ends
 signal s_item_work_ends
-signal s_froze_start
+signal s_froze_start()
 signal s_froze_ends
 signal s_speed_up_start
 signal s_speed_up_ends

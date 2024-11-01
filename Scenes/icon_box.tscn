@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgum4q86tsiip"]
+
+[ext_resource type="Script" path="res://Scenes/icon_box.gd" id="1_ivnl6"]
+
+[node name="Icon_box" type="BoxContainer"]
+offset_right = 48.0
+offset_bottom = 48.0
+script = ExtResource("1_ivnl6")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
