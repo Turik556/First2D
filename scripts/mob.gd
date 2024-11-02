@@ -26,6 +26,7 @@ func on_froze_start():
 func on_speed_up_start():
 	velocity = linear_velocity
 	linear_velocity *=acceleration
+	handler.set_speed_up(true)
 	pass
 func on_item_effect_ends():
 	if $AnimationPlayer.is_playing():
@@ -33,6 +34,7 @@ func on_item_effect_ends():
 	else:
 		$AnimationPlayer.play()	
 	linear_velocity = velocity.rotated(direction)
+	handler.set_speed_up(false)
 	modulate = Color("#ffffff")
 	pass
 	
@@ -75,4 +77,6 @@ func movement():
 	# Choose the velocity for the mob.
 	velocity = Vector2(randf_range(150.0, 250.0), 0.0)
 	linear_velocity = velocity.rotated(direction)
+	if handler.is_speed_up:
+		linear_velocity *= 2
 	pass
