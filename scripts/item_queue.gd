@@ -39,7 +39,7 @@ func on_froze_timer_timeout() -> void:
 
 func start_timer(value:String):
 	match value:
-		"ChangeSizeToSmallTimer":
+		"ChangeSizeToSmallerTimer":
 			$ChangeSizeToSmallTimer.start()
 			Global.s_change_size_s_start.emit()
 		"ChangeSizeToBiggerTimer":

@@ -76,6 +76,7 @@ func interact_with_item(body:Item):
 					$ItemQueue.add_time("ChangeSizeToSmallerTimer",body.item_active_time)
 				elif is_big:
 					change_size("initial")
+					Global.s_change_size_b_ends.emit()
 					$ItemQueue.stop_timer("ChangeSizeToSmallerTimer")
 				else: 
 					$ItemQueue.start_timer("ChangeSizeToSmallerTimer")
@@ -85,7 +86,8 @@ func interact_with_item(body:Item):
 				if is_big:
 					$ItemQueue.add_time("ChangeSizeToBiggerTimer",body.item_active_time)
 				elif is_small:
-					change_size("initial") 
+					change_size("initial")
+					Global.s_change_size_s_ends.emit() 
 					$ItemQueue.stop_timer("ChangeSizeToBiggerTimer")
 				else:
 					$ItemQueue.start_timer("ChangeSizeToBiggerTimer")
