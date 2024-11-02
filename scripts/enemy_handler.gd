@@ -5,6 +5,7 @@ class_name EnemyHandler
 @export var mob_scene: PackedScene
 @onready var mob_spawn_location = $MobPath/MobSpawnLocation
 var i=0
+var is_speed_up = false
 signal s_died
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -62,4 +63,7 @@ func update_timer():
 	var current_timer = $MobTimer.wait_time
 	$MobTimer.wait_time = current_timer - 0.2
 	print ($MobTimer.wait_time)
+	pass
+func set_speed_up(value):
+	is_speed_up = value	
 	pass

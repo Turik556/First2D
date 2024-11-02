@@ -11,3 +11,4 @@ signal s_froze_start()
 signal s_froze_ends
 signal s_speed_up_start
 signal s_speed_up_ends
+var c_velocity:Vector2

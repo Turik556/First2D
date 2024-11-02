@@ -12,6 +12,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	move_and_collide(velocity * delta)
+	print("current =", _velocity)
 	pass
 
 func initialize():
@@ -21,15 +22,21 @@ func initialize():
 	Global.s_froze_start.connect(on_froze_start)
 	Global.s_froze_ends.connect(on_item_effect_ends)
 	Global.s_speed_up_start.connect(on_speed_up_start)
-	Global.s_speed_up_ends.connect(on_item_effect_ends)
+	Global.s_speed_up_ends.connect(_speed_up_end)
 	spawn_pos = handler.get_spawn_location() 
 	position = spawn_pos.position
 	pos = player.get_pos() 
 	velocity = (pos-position).normalized() * speed 
 	look_at(pos)
 	rotation += PI
+	if handler.is_speed_up:
+		velocity *= 2
 	pass
-
+func _speed_up_end():
+	if handler.is_speed_up:
+		velocity /=2
+		handler.set_speed_up(false)	
+	pass
 func on_froze_start():
 	print("check")
 	_velocity = velocity
@@ -42,6 +49,6 @@ func on_item_effect_ends():
 	pass
 
 func on_speed_up_start():
-	_velocity = velocity
 	velocity *=2
+	handler.set_speed_up(true)
 	pass
