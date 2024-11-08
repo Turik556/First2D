@@ -7,7 +7,6 @@ var game
 func _ready() -> void:
 	game = get_node("/root/Game")
 	$PauseButton.hide()
-	$HBoxContainer/HBoxContainer/TextureRect.hide()
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

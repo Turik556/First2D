@@ -39,13 +39,12 @@ func start_game():
 func end_game():
 	$MobTimer.stop()
 	
-	pass
 func on_froze_start():
 	$MobTimer.stop()
-	pass
+
 func on_froze_ends():
 	$MobTimer.start()
-	pass
+
 func get_spawn_location():
 	var location = $MobPath/MobSpawnLocation
 	return location
@@ -55,11 +54,8 @@ func spawn_enemy():
 	var mob = Enemys.pick_random().instantiate()
 	var mob_spawn_location = $MobPath/MobSpawnLocation
 	mob_spawn_location.progress_ratio = randf()
-	
-	
 	add_child(mob)
 	mob.died.connect(on_mob_died)
-	pass
 
 func update_timer():
 	var current_timer = $MobTimer.wait_time
