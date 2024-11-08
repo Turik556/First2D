@@ -10,15 +10,19 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 func set_icon(value):
-	$TextureRect.texture = value
+	$TextureProgressBar/TextureRect.texture = value
 	pass
 
 func is_icon_set() -> bool:
-	if $TextureRect.texture != null:
+	if $TextureProgressBar/TextureRect.texture != null:
 		return true 
 	else:
 		return false	
 	pass
 
 func get_icon() -> Texture:
-	return $TextureRect.texture
+	return $TextureProgressBar/TextureRect.texture
+
+func set_max_value(max):
+	$TextureProgressBar.max_value = max
+	pass

@@ -1,11 +1,25 @@
-[gd_scene load_steps=2 format=3 uid="uid://bgum4q86tsiip"]
+[gd_scene load_steps=4 format=3 uid="uid://bgum4q86tsiip"]
 
 [ext_resource type="Script" path="res://Scenes/icon_box.gd" id="1_ivnl6"]
+[ext_resource type="Texture2D" uid="uid://d31b25vjd78iu" path="res://art/items/icons/circle.png" id="2_l4oit"]
+[ext_resource type="Texture2D" uid="uid://bfmn1lxxnwsrj" path="res://art/items/icons/circle_R.png" id="3_gt05a"]
 
 [node name="Icon_box" type="BoxContainer"]
 offset_right = 48.0
 offset_bottom = 48.0
 script = ExtResource("1_ivnl6")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
 layout_mode = 2
+max_value = 2.0
+value = 2.0
+fill_mode = 4
+texture_under = ExtResource("3_gt05a")
+texture_progress = ExtResource("2_l4oit")
+
+[node name="TextureRect" type="TextureRect" parent="TextureProgressBar"]
+layout_mode = 2
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 8.0
+offset_bottom = 56.0
