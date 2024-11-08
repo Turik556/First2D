@@ -11,6 +11,12 @@ var icons_dict = {
 	"bigger" : preload("res://art/items/icons/potion_03a.png"),
 	"null": null
 }
+var item_active_time_dict = {
+	"froze":1.5,
+	"speed_up" : 3,
+	"smaller" : 4,
+	"bigger" : 3
+}
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	initialize()
@@ -31,7 +37,9 @@ func spawn_icon_box(value):
 		if i.is_icon_set():
 			pass
 		else:
-			i.set_icon(icons_dict[value])	
+			i.set_icon(icons_dict[value])
+			i.set_bar_max_value(item_active_time_dict[value])
+			i.toggle_pbar(true)
 			break	
 	pass
 func remove_icon(value):
@@ -39,8 +47,9 @@ func remove_icon(value):
 		if i.is_icon_set():
 			if i.get_icon() == value:
 				i.set_icon(null)
+				i.set_bar_max_value(0)
+				i.toggle_pbar(false)
 				break
-					
 	pass
 
 func show_UI():
@@ -62,6 +71,7 @@ func initialize():
 
 func _froze_start():
 	spawn_icon_box("froze")
+	
 	pass
 func _froze_ends():
 	remove_icon(icons_dict["froze"])
