@@ -25,6 +25,7 @@ func get_icon() -> Texture:
 	return $TextureProgressBar/TextureRect.texture
 
 func set_bar_max_value(max):
+	$TextureProgressBar.value = 0
 	$TextureProgressBar.max_value = max
 	pass
 func _physics_process(delta: float) -> void:
@@ -35,5 +36,4 @@ func toggle_pbar(value):
 		$TextureProgressBar.show()	
 	else:	
 		$TextureProgressBar.hide()
-		
-	pass
+ 

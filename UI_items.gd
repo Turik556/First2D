@@ -35,7 +35,7 @@ func get_icons():
 func spawn_icon_box(value):
 	for i in icons:
 		if i.is_icon_set():
-			pass
+			break
 		else:
 			i.set_icon(icons_dict[value])
 			i.set_bar_max_value(item_active_time_dict[value])
@@ -66,6 +66,7 @@ func initialize():
 	Global.s_change_size_s_ends.connect(_smaller_end)
 	Global.s_change_size_b_start.connect(_bigger_start)
 	Global.s_change_size_b_ends.connect(_bigger_end)
+	Global.s_add_time.connect(_add_time)
 	get_icons()
 	pass
 
@@ -97,3 +98,10 @@ func _bigger_end():
 func _shield_start():
 	spawn_icon_box("shield")
 	pass	
+func _add_time(name:String,time:float):
+	for i in icons:
+		if i.is_icon_set():
+			if i.get_icon() == name:
+				i.set_bar_max_value(time)
+				break
+	pass

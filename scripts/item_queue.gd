@@ -22,6 +22,7 @@ func on_froze_start():
 	pass
 func add_to_interact_queue(item):
 	queue.append(item)
+	
 	pass
 	
 func on_speed_up_start():
@@ -59,16 +60,26 @@ func start_timer(value:String):
 	debug()
 	
 func add_time(name:String, value:float):
+	var _time:float
+	var _name:String
 	match name:
 		"ChangeSizeToSmallTimer":
-			$ChangeSizeToSmallTimer.start($ChangeSizeToSmallTimer.time_left + value)
+			_time = $ChangeSizeToSmallTimer.time_left + value
+			_name = "smaller"
+			$ChangeSizeToSmallTimer.start(_time)
 		"ChangeSizeToBiggerTimer":
-			$ChangeSizeToBiggerTimer.start($ChangeSizeToBiggerTimer.time_left + value)	
+			_time = $ChangeSizeToBiggerTimer.time_left + value
+			_name = "bigger"
+			$ChangeSizeToBiggerTimer.start(_time)	
 		"AccelerationTimer":
-			$AccelerationTime.start($AccelerationTime.time_left + value)
+			_time = $AccelerationTimer.time_left + value
+			_name = "speed_up"
+			$AccelerationTime.start(_time)
 		"FrozeTimer":
-			$FrozeTimer.start($FrozeTimer.time_left + value)
-			print($FrozeTimer.time_left)
+			_time = $FrozeTimer.time_left + value
+			_name = "froze"
+			$FrozeTimer.start(_time)
+	Global.s_add_time.emit(_name,_time)
 	debug()
 	pass
 
