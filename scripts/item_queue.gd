@@ -51,7 +51,7 @@ func add_time(name:String, value:float):
 	var _time:float
 	var _name:String
 	match name:
-		"ChangeSizeToSmallTimer":
+		"ChangeSizeToSmallerTimer":
 			_time = $ChangeSizeToSmallTimer.time_left + value
 			_name = "smaller"
 			$ChangeSizeToSmallTimer.start(_time)
