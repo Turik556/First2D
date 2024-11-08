@@ -56,19 +56,7 @@ func show_UI():
 	
 	pass
 
-func initialize():
-	#Global.s_game_over.connect()
-	Global.s_froze_start.connect(_froze_start)
-	Global.s_froze_ends.connect(_froze_ends)
-	Global.s_speed_up_start.connect(_speed_up_start)
-	Global.s_speed_up_ends.connect(_speed_up_end)
-	Global.s_change_size_s_start.connect(_smaller_start)
-	Global.s_change_size_s_ends.connect(_smaller_end)
-	Global.s_change_size_b_start.connect(_bigger_start)
-	Global.s_change_size_b_ends.connect(_bigger_end)
-	Global.s_add_time.connect(_add_time)
-	get_icons()
-	pass
+
 
 func _froze_start():
 	spawn_icon_box("froze")
@@ -101,7 +89,26 @@ func _shield_start():
 func _add_time(name:String,time:float):
 	for i in icons:
 		if i.is_icon_set():
-			if i.get_icon() == name:
+			if i.get_icon() == icons_dict[name]:
 				i.set_bar_max_value(time)
 				break
 	pass
+
+func _game_over():
+	for i in icons:
+		i.set_icon(null)
+		i.toggle_pbar(false)
+
+func initialize():
+	#Global.s_game_over.connect()
+	Global.s_froze_start.connect(_froze_start)
+	Global.s_froze_ends.connect(_froze_ends)
+	Global.s_speed_up_start.connect(_speed_up_start)
+	Global.s_speed_up_ends.connect(_speed_up_end)
+	Global.s_change_size_s_start.connect(_smaller_start)
+	Global.s_change_size_s_ends.connect(_smaller_end)
+	Global.s_change_size_b_start.connect(_bigger_start)
+	Global.s_change_size_b_ends.connect(_bigger_end)
+	Global.s_add_time.connect(_add_time)
+	Global.s_game_over.connect(_game_over)
+	get_icons()

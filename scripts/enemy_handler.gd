@@ -34,9 +34,11 @@ func on_mob_died(mob):
 func start_game():
 	$MobTimer.start()
 	$MobTimer.wait_time = start_time
+	is_speed_up = false
 	pass
 func end_game():
 	$MobTimer.stop()
+	
 	pass
 func on_froze_start():
 	$MobTimer.stop()
