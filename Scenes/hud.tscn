@@ -72,6 +72,7 @@ grow_vertical = 0
 text = "Pause"
 
 [node name="UI_items" parent="." instance=ExtResource("4_q777c")]
+process_mode = 1
 
 [connection signal="timeout" from="MessageTimer" to="." method="_on_message_timer_timeout"]
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
