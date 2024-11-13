@@ -13,3 +13,4 @@ signal s_speed_up_start
 signal s_speed_up_ends
 signal s_add_time(value:String, time:float)
 var c_velocity:Vector2
+@onready var game = get_node("/root/Game")

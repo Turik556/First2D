@@ -46,4 +46,5 @@ func _on_enemy_handler_s_died(mob) -> void:
 	
 	pass # Replace with function body.
 
-pass
+
+	

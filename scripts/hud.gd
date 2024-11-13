@@ -2,6 +2,7 @@ extends CanvasLayer
 
 signal start_game
 var game 
+var p_menu = preload("res://pause_menu.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -36,4 +37,11 @@ func _on_message_timer_timeout() -> void:
 	pass # Replace with function body.
 func _on_pause_button_pressed() -> void:
 	game.pause_game()
-	pass # Replace with function body.
+	show_button(false)
+	var _menu = p_menu.instantiate()
+	add_child(_menu)
+func show_button(value:bool):
+	if value:
+		$PauseButton.show()
+	else:
+		$PauseButton.hide()
