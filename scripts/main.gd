@@ -40,11 +40,11 @@ func update_score(value):
 func _on_start_timer_timeout() -> void:
 	Global.s_start_game.emit
 	is_game_started = true
-	pass # Replace with function body.
+	
 func _on_enemy_handler_s_died(mob) -> void:
 	update_score(1)
 	
-	pass # Replace with function body.
+	
 
-
+	#$background.material.set("shader_parameter/scroll_speed",value)
 	
