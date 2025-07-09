@@ -27,7 +27,7 @@ func _on_enemy_handler_s_died(mob) -> void:
 	if toggle_random:
 		var random_number = rng.randf_range(0.0,9.0)
 		#print(random_number)
-		if random_number < 1.5:
+		if random_number < 3:
 			spawn_item(mob.position)
 	else:
 			spawn_item(mob.position)	

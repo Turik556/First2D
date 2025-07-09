@@ -28,6 +28,7 @@ func update_score(score):
 func _on_start_button_pressed() -> void:
 	$StartButton.hide()
 	$PauseButton.show()
+	$LangButton.hide()
 	start_game.emit()
 	pass # Replace with function body.
 func _on_message_timer_timeout() -> void:
@@ -41,5 +42,7 @@ func _on_pause_button_pressed() -> void:
 func show_button(value:bool):
 	if value:
 		$PauseButton.show()
+		
 	else:
 		$PauseButton.hide()
+		$LangButton.hide()

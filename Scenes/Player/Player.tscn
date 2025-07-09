@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://cajufjns3158d"]
 
-[ext_resource type="Script" path="res://scripts/player.gd" id="1_y0ten"]
+[ext_resource type="Script" uid="uid://cs262j2m46dik" path="res://scripts/player.gd" id="1_y0ten"]
 [ext_resource type="PackedScene" uid="uid://cnq5205a782qa" path="res://Scenes/Handlers/item_queue.tscn" id="3_m8pip"]
 [ext_resource type="PackedScene" uid="uid://drpyjqxlti35j" path="res://Scenes/Player/Shield_component.tscn" id="4_gn1bt"]
 [ext_resource type="Texture2D" uid="uid://bynhfobo8vufh" path="res://art/player/baloon.png" id="4_y0brg"]

@@ -1,10 +1,10 @@
 [gd_scene load_steps=11 format=3 uid="uid://cveqi88yfygc1"]
 
 [ext_resource type="PackedScene" uid="uid://cajufjns3158d" path="res://Scenes/Player/Player.tscn" id="1_pm0dl"]
-[ext_resource type="Script" path="res://scripts/main.gd" id="1_y5qig"]
+[ext_resource type="Script" uid="uid://bqelhy865miid" path="res://scripts/main.gd" id="1_y5qig"]
 [ext_resource type="PackedScene" uid="uid://pvr776ugj5v" path="res://Scenes/Items/enemy_speed_up_item.tscn" id="3_owb8q"]
 [ext_resource type="PackedScene" uid="uid://dxl8mpdnhg8dq" path="res://Scenes/Items/item.tscn" id="3_rwv84"]
-[ext_resource type="Shader" path="res://art/shaders/background.gdshader" id="4_rd5yi"]
+[ext_resource type="Shader" uid="uid://ce52nv17txwgh" path="res://art/shaders/background.gdshader" id="4_rd5yi"]
 [ext_resource type="Texture2D" uid="uid://hp1svvvhp1bo" path="res://art/8614580.jpg" id="4_rjcux"]
 [ext_resource type="PackedScene" uid="uid://bqi3n4fssgs2l" path="res://Scenes/Handlers/EnemyHandler.tscn" id="4_ybo78"]
 [ext_resource type="PackedScene" uid="uid://1tee4hpui1pn" path="res://Scenes/hud.tscn" id="4_yohv7"]
@@ -42,6 +42,7 @@ process_mode = 1
 
 [node name="Item_spawner" parent="." instance=ExtResource("6_8ngv0")]
 process_mode = 1
+toggle_random = true
 
 [node name="StartTimer" type="Timer" parent="."]
 process_mode = 1

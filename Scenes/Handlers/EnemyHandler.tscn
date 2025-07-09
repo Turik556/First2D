@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://bqi3n4fssgs2l"]
 
-[ext_resource type="Script" path="res://scripts/enemy_handler.gd" id="1_15j12"]
+[ext_resource type="Script" uid="uid://c0iqq547mkx84" path="res://scripts/enemy_handler.gd" id="1_15j12"]
 [ext_resource type="PackedScene" uid="uid://dn3uhqj24rcyi" path="res://Scenes/Enemies/saw_64.tscn" id="2_fia5u"]
 [ext_resource type="PackedScene" uid="uid://b8fo4f7bqh0e3" path="res://Scenes/Enemies/saw_128.tscn" id="3_6wxdr"]
 [ext_resource type="PackedScene" uid="uid://4i2iyednab76" path="res://Scenes/Enemies/shuriken.tscn" id="3_cd12b"]

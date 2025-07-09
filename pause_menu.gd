@@ -18,7 +18,6 @@ func _process(delta: float) -> void:
 func _on_resume_button_pressed() -> void:
 	Global.game.pause_game()
 	get_parent().show_button(true)
-	
 	queue_free()
 
 func _on_exit_button_pressed() -> void:

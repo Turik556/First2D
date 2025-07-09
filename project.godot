@@ -12,18 +12,23 @@ config_version=5
 
 config/name="First2D"
 run/main_scene="res://Scenes/game.tscn"
-config/features=PackedStringArray("4.3", "Forward Plus")
+config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://else/icon.svg"
 
 [autoload]
 
 Global="*res://scripts/global.gd"
+YandexSDK="*res://addons/godot-yandex-games-sdk/yandex_sdk.gd"
 
 [display]
 
 window/size/viewport_width=720
 window/size/viewport_height=720
 window/stretch/mode="canvas_items"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot-yandex-games-sdk/plugin.cfg")
 
 [input]
 

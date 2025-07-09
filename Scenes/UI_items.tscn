@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bvhv8wlvdh61w"]
 
-[ext_resource type="Script" path="res://UI_items.gd" id="1_de6ud"]
+[ext_resource type="Script" uid="uid://dhj1ikn86wk1c" path="res://UI_items.gd" id="1_de6ud"]
 [ext_resource type="PackedScene" uid="uid://bgum4q86tsiip" path="res://Scenes/icon_box.tscn" id="2_jmahw"]
 
 [node name="HBoxContainer" type="HBoxContainer"]

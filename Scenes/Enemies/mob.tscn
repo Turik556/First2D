@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://crmgdl0poacw7"]
 
-[ext_resource type="Script" path="res://scripts/mob.gd" id="1_wenyy"]
+[ext_resource type="Script" uid="uid://cmdfu0ct0rhwo" path="res://scripts/mob.gd" id="1_wenyy"]
 [ext_resource type="Texture2D" uid="uid://c0nbuq6rjuljq" path="res://art/saw_64/saw_64_0.png" id="2_uyp1r"]
 
 [sub_resource type="Animation" id="Animation_br4kg"]
@@ -36,8 +36,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_507ck"]
 _data = {
-"RESET": SubResource("Animation_br4kg"),
-"rotation": SubResource("Animation_a7rpp")
+&"RESET": SubResource("Animation_br4kg"),
+&"rotation": SubResource("Animation_a7rpp")
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nb80f"]

@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://crmgdl0poacw7" path="res://Scenes/Enemies/mob.tscn" id="1_5g4x5"]
 [ext_resource type="Texture2D" uid="uid://chsh112hgpsh8" path="res://art/Kunai_128.png" id="2_n5n04"]
-[ext_resource type="Script" path="res://scripts/kunai.gd" id="2_vr7w6"]
+[ext_resource type="Script" uid="uid://o5m0stxjgxs8" path="res://scripts/kunai.gd" id="2_vr7w6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xemd3"]
 radius = 14.0
